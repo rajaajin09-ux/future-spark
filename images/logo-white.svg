@@ -4,5 +4,5 @@
     <path d="M8 31 H56" fill="none" stroke="#FFFFFF" stroke-width="4.5" stroke-linecap="round"/>
     <path d="M48 4 C48 11 51 14 58 14 C51 14 48 17 48 24 C48 17 45 14 38 14 C45 14 48 11 48 4 Z" fill="#FFFFFF"/>
   </g>
-  <text x="92" y="59" fill="#FFFFFF" font-family="Montserrat, Arial, Helvetica, sans-serif" font-weight="700" font-size="40">Future Spark</text>
+  <text x="92" y="59" fill="#FFFFFF" font-family="Merriweather, Georgia, serif" font-weight="700" font-size="40">Future Spark</text>
 </svg>

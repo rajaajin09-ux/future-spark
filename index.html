@@ -3,624 +3,430 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Future Spark | Free hands-on STEM kits for elementary schools in Ohio</title>
-<meta name="description" content="Future Spark is a student-led initiative in Columbus, Ohio. High school students build free hands-on STEM kits and deliver them to elementary schools. 300 kits so far.">
+<title>Future Spark | Free Hands-On STEM Kits for Elementary Schools in Ohio</title>
+<meta name="description" content="Future Spark is a student-led nonprofit initiative that builds free hands-on STEM kits for elementary schools and community organizations in Columbus, Cleveland, and nearby Ohio counties.">
 <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Future Spark | Free hands-on STEM kits for elementary schools in Ohio">
-<meta property="og:description" content="Future Spark is a student-led initiative in Columbus, Ohio. High school students build free hands-on STEM kits and deliver them to elementary schools. 300 kits so far.">
+<meta property="og:title" content="Future Spark | Free Hands-On STEM Kits for Elementary Schools in Ohio">
+<meta property="og:description" content="Future Spark is a student-led nonprofit initiative that builds free hands-on STEM kits for elementary schools and community organizations in Columbus, Cleveland, and nearby Ohio counties.">
 <meta property="og:image" content="images/box-of-kits-wide.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700&family=Nunito:wght@900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-/* Future Spark — layout modeled on mindrobotics.com */
+/* Future Spark */
 
 :root {
-  --black: #061a1e;
+  --navy: #1b3a5c;
+  --text: #2b3442;
+  --muted: #5f6b7a;
+  --line: #dfe4ea;
+  --band: #f3f5f8;
+  --blue: #1f5fd6;
+  --blue-dark: #174cae;
+  --yellow: #ffbd00;
   --white: #ffffff;
-  --grey-100: #dbd7ca;
-  --grey-50: #e8e5e0;
-  --grey-10: #f6f4f0;
-  --teal: #1f5fd6;
-  --yellow: #bcd6ff;
-  --coral: #ffbd00;
-  --gutter: 24px;
-  --gap: 16px;
-  --spacer-small: 64px;
-  --spacer-medium: 96px;
-  --spacer-large: 168px;
-  --spacer-xl: 240px;
-  --radius-small: 24px;
-  --radius-medium: 40px;
-  --radius-large: 72px;
-  --tag-pad: 0.3em;
-  --font: "Outfit", "Segoe UI", Helvetica, Arial, sans-serif;
-  --font-mark: "Nunito", "Outfit", Arial, sans-serif;
+  --serif: "Merriweather", Georgia, "Times New Roman", serif;
+  --sans: "Source Sans 3", "Segoe UI", Helvetica, Arial, sans-serif;
 }
-@media (min-width: 834px) { :root { --gutter: 32px; --gap: 24px; --spacer-medium: 112px; --spacer-xl: 192px; } }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; overflow-x: clip; }
-body {
-  margin: 0;
-  font-family: var(--font);
-  font-size: 18px;
-  line-height: 1.55;
-  color: var(--black);
-  background: var(--grey-50);
-  -webkit-font-smoothing: antialiased;
-}
-h1, h2, h3 { margin: 0; font-weight: 700; color: var(--black); }
-p { margin: 0 0 1em; }
+html { scroll-behavior: smooth; }
+body { margin: 0; font-family: var(--sans); font-size: 18px; line-height: 1.6; color: var(--text); background: var(--white); -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4 { font-family: var(--serif); color: var(--navy); line-height: 1.25; margin: 0 0 16px; font-weight: 700; }
+h1 { font-size: 40px; }
+h2 { font-size: 30px; }
+h3 { font-size: 21px; }
+h4 { font-family: var(--sans); font-size: 18px; margin-bottom: 8px; }
+p { margin: 0 0 16px; }
 p:last-child { margin-bottom: 0; }
-a { color: inherit; }
+a { color: var(--blue); }
+a:hover { color: var(--blue-dark); }
 img { display: block; max-width: 100%; height: auto; }
-ul { margin: 0; padding: 0; list-style: none; }
-strong { font-weight: 700; }
-
-/* 12-column grid */
-.grid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); column-gap: var(--gap); padding-inline: var(--gutter); }
-@media (min-width: 834px) { .grid { grid-template-columns: repeat(12, minmax(0, 1fr)); } }
-section { position: relative; }
-
-/* Type */
-.h-statement { font-size: clamp(40px, 5.5vw, 80px); line-height: 1.32; letter-spacing: -0.04em; text-wrap: balance; }
-.h-section { font-size: clamp(34px, 3.6vw, 52px); line-height: 1.2; letter-spacing: -0.03em; }
-.h-card { font-size: clamp(24px, 2.2vw, 32px); font-weight: 500; letter-spacing: -0.02em; line-height: 1.4; }
-.h-big { font-size: clamp(30px, 3vw, 44px); font-weight: 500; letter-spacing: -0.03em; line-height: 1.3; }
-.h-giant { font-size: clamp(64px, 12vw, 176px); line-height: 0.95; letter-spacing: -0.04em; font-weight: 700; }
-.p-large { font-size: clamp(17px, 1.3vw, 20px); line-height: 1.5; }
-.p-small { font-size: 15px; line-height: 1.45; }
-
-/* Tag pills inside headlines */
-.tag { display: inline-block; padding: 0 var(--tag-pad); border-radius: 999px; line-height: 1.25; white-space: nowrap; margin: 0.06em 0; }
-.tag.teal { background: var(--teal); color: var(--white); }
-.tag.coral { background: var(--coral); color: var(--black); }
-.tag.yellow { background: var(--yellow); color: var(--black); }
-.tag.black { background: var(--black); color: var(--white); }
-.tag.white { background: var(--white); color: var(--black); }
-.tag.grey { background: #bcd6ff; color: var(--black); }
-.dot { display: inline-block; width: 1.25em; height: 1.25em; border-radius: 50%; vertical-align: middle; margin-right: 0.15em; flex: none; }
-.dot.yellow { background: var(--yellow); }
-.dot.coral { background: var(--coral); }
-.dot.white { background: var(--white); }
-.stack { display: flex; flex-direction: column; align-items: flex-start; gap: 0.15em; }
-.stack > span { display: inline-flex; align-items: center; gap: 0.2em; }
+ul, ol { margin: 0 0 16px; padding-left: 22px; }
+li { margin-bottom: 6px; }
+strong { color: var(--navy); }
+.muted { color: var(--muted); }
+.small { font-size: 16px; }
+.container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+.narrow { max-width: 720px; }
+section { padding: 72px 0; }
+section.band { background: var(--band); }
+section.tight { padding: 48px 0; }
+.section-heading { margin-bottom: 36px; }
+.section-heading h2::after { content: ""; display: block; width: 48px; height: 4px; background: var(--yellow); margin-top: 14px; }
+.section-heading p { max-width: 720px; color: var(--muted); }
+.center { text-align: center; }
+.center .section-heading h2::after { margin-left: auto; margin-right: auto; }
+.center .section-heading p { margin-left: auto; margin-right: auto; }
 
 /* Buttons */
-.btn { display: inline-flex; align-items: center; height: 42px; padding: 0 18px; border-radius: 999px; background: var(--teal); color: var(--white); font-weight: 700; font-size: 18px; text-decoration: none; border: 0; cursor: pointer; font-family: inherit; white-space: nowrap; }
-.btn:hover { background: #1a4fb3; }
-.btn.black { background: var(--black); }
-.btn.white { background: var(--white); color: var(--black); }
-.btn.white:hover { background: var(--grey-10); }
-.btn + .btn { margin-left: 8px; }
+.btn { display: inline-block; padding: 12px 24px; border-radius: 6px; font-family: var(--sans); font-weight: 600; font-size: 17px; line-height: 1.4; text-decoration: none; border: 2px solid transparent; cursor: pointer; white-space: nowrap; }
+.btn-primary { background: var(--blue); color: var(--white); border-color: var(--blue); }
+.btn-primary:hover { background: var(--blue-dark); border-color: var(--blue-dark); color: var(--white); }
+.btn-outline { background: transparent; color: var(--navy); border-color: var(--navy); }
+.btn-outline:hover { background: var(--navy); color: var(--white); }
+.btn-light { background: var(--white); color: var(--navy); border-color: var(--white); }
+.btn-light:hover { background: var(--band); }
+.btn-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
 
 /* Header */
-header { position: fixed; inset: 0 0 auto; z-index: 20; padding: 24px var(--gutter); display: flex; justify-content: space-between; align-items: center; gap: 16px; pointer-events: none; }
-header > * { pointer-events: auto; }
-.tabs { display: flex; gap: 4px; background: rgba(255,255,255,0.85); backdrop-filter: blur(8px); border-radius: 999px; padding: 4px; }
-.tabs a { display: inline-flex; align-items: center; height: 34px; padding: 0 16px; border-radius: 999px; font-weight: 700; font-size: 15px; text-decoration: none; color: var(--black); white-space: nowrap; transition: background 0.2s, color 0.2s; }
-.tabs a:hover { background: var(--grey-50); }
-.tabs a[aria-current="page"] { background: var(--black); color: var(--white); }
-@media (max-width: 833px) {
-  header { flex-wrap: wrap; padding: 16px var(--gutter); row-gap: 10px; }
-  .tabs { order: 3; width: 100%; justify-content: space-between; overflow-x: auto; }
-  .tabs a { height: 32px; padding: 0 12px; font-size: 14px; flex: 1; justify-content: center; }
-  .mark { width: 44px; height: 44px; }
-}
-.mark { display: block; width: 64px; height: 64px; }
-.mark img { width: 100%; height: 100%; }
-.actions { display: flex; gap: 8px; }
-@media (min-width: 834px) { header { padding: 32px var(--gutter); } }
+.site-header { background: var(--white); border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 50; }
+.site-header .container { display: flex; align-items: center; justify-content: space-between; gap: 24px; height: 76px; }
+.logo { display: inline-flex; align-items: center; gap: 10px; font-family: var(--serif); font-weight: 700; font-size: 22px; color: var(--navy); text-decoration: none; white-space: nowrap; }
+.logo img { width: 34px; height: 34px; }
+.logo:hover { color: var(--navy); }
+.nav { display: flex; align-items: center; gap: 4px; }
+.nav a { display: inline-block; padding: 8px 12px; border-radius: 4px; font-weight: 600; font-size: 16px; color: var(--text); text-decoration: none; }
+.nav a:hover { background: var(--band); color: var(--navy); }
+.nav a[aria-current="page"] { color: var(--navy); box-shadow: inset 0 -3px 0 var(--yellow); border-radius: 0; }
+.nav .btn { margin-left: 12px; padding: 10px 18px; font-size: 16px; }
+.nav .btn:hover { background: var(--blue-dark); box-shadow: none; }
+.menu-toggle { display: none; background: none; border: 1px solid var(--line); border-radius: 4px; padding: 8px 12px; font: 600 16px var(--sans); color: var(--navy); cursor: pointer; }
 
-/* Hero: a tall track with a pinned frame; the arm lowers as you scroll through it */
-.hero-track { height: 320vh; position: relative; }
-.hero-pin { position: sticky; top: 0; height: 100vh; overflow: hidden; padding: var(--spacer-xl) var(--gutter) 0; display: flex; flex-direction: column; gap: 9vw; }
-.wordmark { position: relative; z-index: 1; font-family: var(--font-mark); font-weight: 900; font-size: clamp(56px, 12.4vw, 186px); line-height: 0.9; letter-spacing: -0.01em; color: var(--black); transform: translateY(calc(var(--p, 0) * -6vh)) scale(calc(1 - var(--p, 0) * 0.06)); transform-origin: left top; }
-.wordmark span { display: block; }
-.wordmark .ch { display: inline-block; opacity: 0; transform: translateY(0.6em) rotate(6deg); animation: rise 0.9s cubic-bezier(.14, 1, .34, 1) forwards; animation-delay: calc(var(--i) * 55ms + 150ms); }
-.wordmark .line2 .ch { animation-delay: calc(var(--i) * 55ms + 420ms); }
-.wordmark.lit .line2 .ch { color: var(--teal); animation: lit 0.5s cubic-bezier(.14, 1, .34, 1) forwards; animation-delay: calc(var(--i) * 40ms); }
-@keyframes rise { to { opacity: 1; transform: none; } }
-@keyframes lit { 0% { transform: translateY(0); } 40% { transform: translateY(-0.08em); } 100% { transform: none; opacity: 1; } }
-.shapes { display: flex; justify-content: space-between; margin-top: -6vw; position: relative; }
-.shapes span { width: 32%; background: var(--white); border-radius: 999px; opacity: 0; animation: rise 1.1s cubic-bezier(.14, 1, .34, 1) forwards; }
-.shapes .pill { aspect-ratio: 2 / 5; }
-.shapes .pill.first { transform: translateY(-22%); animation-delay: 0.7s; --ty: -22%; }
-.shapes .ball { aspect-ratio: 1; align-self: flex-start; margin-top: 9.6%; animation-delay: 0.85s; --ty: 40%; }
-.shapes .pill:last-child { animation-delay: 1s; --ty: 0%; }
-.shapes span { animation-name: rise-shape; }
-@keyframes rise-shape { from { opacity: 0; transform: translateY(calc(var(--ty) + 12vh)); } to { opacity: 1; transform: translateY(var(--ty)); } }
-.arm-wrap { position: absolute; right: 4%; top: 0; width: 24%; max-width: 360px; z-index: 3; pointer-events: none; transform: translateY(var(--arm-y, -110%)); will-change: transform; }
-.arm-obj { width: 100%; height: auto; aspect-ratio: 400 / 980; display: block; }
-.kit-wrap { position: absolute; right: 6%; bottom: 8vh; width: 20%; max-width: 300px; z-index: 2; pointer-events: none; }
-.kit-wrap .hero-art { width: 100%; transform: translateY(calc((1 - var(--p, 0)) * 6vh)); }
-.spark-burst { position: absolute; right: -10%; top: -14%; width: 40%; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle, var(--yellow) 0 30%, transparent 32% 44%, var(--yellow) 45% 50%, transparent 52%); opacity: 0; transform: scale(0.3); }
-.kit-wrap.lit .spark-burst { animation: burst 0.7s cubic-bezier(.14, 1, .34, 1) forwards; }
-@keyframes burst { 0% { opacity: 0; transform: scale(0.3); } 40% { opacity: 1; } 100% { opacity: 0; transform: scale(1.8); } }
-.scroll-hint { position: absolute; left: 50%; bottom: 24px; transform: translateX(-50%); font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; opacity: calc(0.6 - var(--p, 0) * 2); animation: nudge 1.6s ease-in-out infinite; }
-@keyframes nudge { 50% { transform: translate(-50%, 6px); } }
-@media (min-width: 834px) {
-  .hero-pin { gap: 4.5vw; }
-  .wordmark > span + span { margin-left: 0.85em; }
-  .shapes { margin-top: -10vw; }
-}
-@media (max-width: 833px) {
-  .hero-track { height: 240vh; }
-  .hero-pin { padding-top: 170px; }
-  .wordmark { transform: translateY(calc(var(--p, 0) * -2vh)); }
-  .arm-wrap { width: 42%; right: 2%; }
-  .kit-wrap { width: 34%; right: 4%; bottom: 6vh; }
-  .shapes { margin-top: 24px; }
-}
+/* Hero */
+.hero { padding: 64px 0; }
+.hero .container { display: grid; grid-template-columns: 1.05fr 1fr; gap: 56px; align-items: center; }
+.hero h1 { font-size: 44px; margin-bottom: 18px; }
+.hero p { font-size: 20px; color: var(--muted); max-width: 540px; }
+.hero img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 8px; }
+.page-header { padding: 56px 0 40px; border-bottom: 1px solid var(--line); }
+.page-header h1 { margin-bottom: 10px; }
+.page-header p { font-size: 20px; color: var(--muted); max-width: 720px; margin: 0; }
 
-/* Statement */
-.statement { padding-top: var(--spacer-medium); padding-bottom: var(--spacer-small); row-gap: 32px; }
-.statement .h-statement { grid-column: 1 / -1; }
-.statement .body { grid-column: 1 / -1; max-width: 600px; }
-@media (min-width: 834px) {
-  .statement .h-statement { grid-column: 2 / span 9; }
-  .statement .body { grid-column: 2 / span 7; }
-}
-@media (min-width: 1200px) {
-  .statement .h-statement { grid-column: 3 / span 9; max-width: 1000px; }
-  .statement .body { grid-column: 3 / span 5; }
-}
-.deco { position: absolute; pointer-events: none; z-index: 0; }
-.deco.ball { background: var(--white); border-radius: 50%; }
-.statement > * { position: relative; z-index: 1; }
-.statement > .deco { position: absolute; z-index: 0; }
+/* Grids and cards */
+.cols-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+.cols-2.top { align-items: start; }
+.cols-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.cols-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; }
+.card { background: var(--white); border: 1px solid var(--line); border-radius: 8px; padding: 28px; }
+.card h3 { margin-bottom: 10px; }
+.card p:last-child { margin-bottom: 0; }
+.card .btn { margin-top: 16px; }
+.photo { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 8px; }
+.photo-tall { aspect-ratio: 3 / 4; }
+.photo-card { border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: var(--white); }
+.photo-card img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.photo-card .body { padding: 22px 24px; }
+.photo-card h3 { margin-bottom: 8px; }
+.photo-card p { margin: 0; color: var(--muted); }
+figure { margin: 0; }
+figcaption { font-size: 15px; color: var(--muted); margin-top: 8px; }
 
-/* Numbers strip */
-.numbers { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
-.numbers li { background: var(--white); border-radius: 999px; padding: 10px 20px; font-size: 16px; }
-.numbers strong { font-size: 22px; margin-right: 6px; }
+/* Stats */
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; }
+.stat { border-left: 4px solid var(--yellow); padding-left: 18px; }
+.stat-number { font-family: var(--serif); font-size: 44px; font-weight: 700; color: var(--navy); line-height: 1.1; }
+.stat-label { font-weight: 600; margin-top: 4px; }
+.stat-note { font-size: 15px; color: var(--muted); }
 
-/* Full-bleed 2:1 photo band with circles cutting into its top edge */
-.band { position: relative; background: var(--grey-100); margin-top: var(--spacer-small); overflow-x: clip; overflow-y: visible; }
-.band .frame { aspect-ratio: 2 / 1; overflow: hidden; background: var(--grey-100); position: relative; }
-.band img { width: 100%; height: 100%; object-fit: cover; }
-.band .cut { position: absolute; top: 0; width: 20%; aspect-ratio: 1; background: var(--white); border-radius: 50%; transform: translateY(-50%); pointer-events: none; z-index: 2; }
-.band .cut.a { left: 70%; } .band .cut.b { left: 90%; }
-.band .dots { position: absolute; bottom: var(--gutter); left: 50%; transform: translateX(-50%); display: flex; gap: 3px; z-index: 3; }
-.band .dots button { width: 12px; height: 12px; border-radius: 999px; border: 0; background: var(--grey-100); padding: 0; cursor: pointer; transition: width 0.2s; }
-.band .dots button[aria-current="true"] { width: 60px; background: var(--teal); }
-.band .slides img { position: absolute; inset: 0; transition: clip-path 0.8s ease-in-out; clip-path: inset(0 0 100% 0); }
-.band .slides img.active { clip-path: inset(0); }
-@media (min-width: 834px) { .band .dots button { width: 16px; height: 16px; } .band .dots button[aria-current="true"] { width: 124px; } }
+/* Progress */
+.progress { height: 12px; background: var(--line); border-radius: 6px; overflow: hidden; margin: 16px 0 8px; }
+.progress div { height: 100%; background: var(--blue); }
+.progress-labels { display: flex; justify-content: space-between; font-size: 15px; color: var(--muted); }
 
-/* Two-column feature: stacked tag headline + copy on the left, rounded image on the right */
-.feature { padding-block: var(--spacer-medium); row-gap: 40px; }
-.feature .text { grid-column: 1 / -1; }
-.feature .media { grid-column: 1 / -1; }
-.feature .body { margin-top: 40px; max-width: 560px; }
-.feature .media img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border-radius: var(--radius-medium); background: var(--grey-100); }
-.feature .media.outlined img { border: 1px solid var(--black); }
-@media (min-width: 834px) {
-  .feature .text { grid-column: 1 / span 6; }
-  .feature .media { grid-column: 7 / span 6; }
-}
-@media (min-width: 1200px) { .feature .text { grid-column: 1 / span 5; } }
+/* Lists */
+.steps { list-style: none; padding: 0; counter-reset: step; }
+.steps li { position: relative; padding-left: 52px; margin-bottom: 20px; }
+.steps li::before { counter-increment: step; content: counter(step); position: absolute; left: 0; top: 0; width: 36px; height: 36px; border-radius: 50%; background: var(--navy); color: var(--white); font-weight: 700; display: flex; align-items: center; justify-content: center; }
+.steps h3 { font-size: 19px; margin-bottom: 4px; }
+.steps p { margin: 0; color: var(--muted); }
+.check { list-style: none; padding: 0; }
+.check li { padding-left: 26px; position: relative; margin-bottom: 8px; }
+.check li::before { content: ""; position: absolute; left: 0; top: 10px; width: 12px; height: 12px; border-radius: 50%; background: var(--yellow); }
+.partners { list-style: none; padding: 0; margin: 0; }
+.partners li { padding: 14px 0; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.partners li:last-child { border-bottom: 1px solid var(--line); }
+.partners span { color: var(--muted); }
+dl.facts { margin: 0; }
+dl.facts dt { font-weight: 700; color: var(--navy); margin-top: 14px; }
+dl.facts dd { margin: 2px 0 0; }
 
-/* Kid building a kit: animated illustration */
-.build { padding-block: var(--spacer-medium); row-gap: 40px; align-items: center; }
-.build .text { grid-column: 1 / -1; }
-.build .scene { grid-column: 1 / -1; background: var(--white); border-radius: var(--radius-medium); padding: 24px; }
-.build .scene svg { width: 100%; height: auto; display: block; }
-.build .body { margin-top: 32px; max-width: 520px; }
-.build .steps { margin-top: 24px; display: grid; gap: 10px; }
-.build .steps li { display: flex; gap: 12px; align-items: baseline; font-size: 16px; }
-.build .steps b { flex: none; width: 28px; height: 28px; border-radius: 50%; background: var(--yellow); display: inline-flex; align-items: center; justify-content: center; font-size: 14px; }
-@media (min-width: 834px) { .build .text { grid-column: 1 / span 5; } .build .scene { grid-column: 7 / span 6; } }
-.page .scene-mini { grid-column: 1 / -1; max-width: 420px; background: var(--white); border-radius: var(--radius-small); padding: 12px; }
-.page .scene-mini svg { width: 100%; height: auto; display: block; }
-@media (min-width: 834px) { .page .scene-mini { grid-column: 8 / span 5; grid-row: 1 / span 2; } }
-
-/* Cards section on the darker grey */
-.cards { background: var(--grey-100); padding-block: var(--spacer-medium); border-top: 1px solid rgba(6,26,30,0.08); }
-.cards .head { grid-column: 1 / -1; margin-bottom: 48px; }
-.card-row { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr; gap: var(--gap); }
-.card { background: var(--white); border-radius: var(--radius-small); padding: 12px; }
-.card img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 16px; }
-.card .h-card { margin: 18px 12px 6px; }
-.card p { margin: 0 12px 10px; font-size: 15px; line-height: 1.45; }
-@media (min-width: 600px) { .card-row { grid-template-columns: 1fr 1fr; } }
-@media (min-width: 1100px) { .card-row { grid-template-columns: repeat(4, 1fr); } }
-
-/* Progress and partners */
-.progress { height: 12px; background: var(--white); border-radius: 999px; overflow: hidden; margin: 16px 0 8px; }
-.progress div { height: 100%; background: var(--teal); border-radius: 999px; }
-.progress-labels { display: flex; justify-content: space-between; font-size: 14px; }
-.partners li { padding: 10px 0; border-top: 1px solid rgba(6,26,30,0.15); font-size: 16px; }
-.partners li:last-child { border-bottom: 1px solid rgba(6,26,30,0.15); }
-.partners li span { opacity: 0.6; font-size: 14px; }
-
-/* Big outlined card section */
-.bigcard { padding-block: var(--spacer-medium); row-gap: 80px; }
-.bigcard .title { grid-column: 1 / -1; text-align: center; }
-.bigcard .title .stack { align-items: center; }
-.bigcard .panel { grid-column: 1 / -1; background: var(--white); border: 1px solid var(--black); border-radius: var(--radius-medium); padding: 48px var(--gutter); display: grid; gap: 40px; }
-.bigcard .panel .body { max-width: 540px; }
-.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 24px 0 32px; }
-.chips li { background: var(--grey-100); border-radius: 999px; padding: 6px 14px; font-size: 15px; }
-@media (min-width: 834px) { .bigcard .panel { grid-template-columns: 1fr 1fr; padding: 96px 8.3%; gap: 64px; } }
-
-/* Giant closing section */
-.giant { position: relative; padding: var(--spacer-large) var(--gutter) var(--spacer-xl); overflow: hidden; min-height: 90svh; }
-.giant .h-giant { position: relative; z-index: 1; }
-.giant .h-giant span { display: block; }
-.giant .h-giant .l2 { margin-left: 60%; }
-.giant .g-shapes { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
-.giant .g-shapes span { position: absolute; background: var(--white); border-radius: 999px; }
-.giant .g-shapes .p1 { left: 13%; top: 22%; width: 24%; aspect-ratio: 2 / 5; }
-.giant .g-shapes .b1 { left: 39%; top: 32%; width: 24%; aspect-ratio: 1; }
-.giant .g-shapes .p2 { left: 64%; top: 38%; width: 24%; aspect-ratio: 2 / 5; }
-.giant .cta { position: absolute; left: 51%; top: calc(32% + 12vw); transform: translate(-50%, -50%); z-index: 2; width: 150px; height: 150px; border-radius: 50%; background: var(--black); color: var(--white); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 22px; text-decoration: none; text-align: center; padding: 12px; line-height: 1.2; }
-.giant .cta:hover { background: var(--teal); }
-@media (max-width: 833px) { .giant .h-giant .l2 { margin-left: 20%; } .giant .cta { width: 120px; height: 120px; font-size: 18px; top: 48%; } }
-
-/* Footer pill bar */
-footer { padding: 0 var(--gutter) 24px; }
-.footbar { background: var(--grey-10); border-radius: 999px; padding: 12px 24px 12px 20px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; font-size: 14px; }
-.footbar .left, .footbar .right { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
-.footbar a { text-decoration: none; }
-.footbar a:hover { text-decoration: underline; }
-.footbar .mark { width: 40px; height: 40px; }
-.legal { font-size: 12px; opacity: 0.6; padding: 12px 24px 0; }
-@media (max-width: 833px) { .footbar { border-radius: var(--radius-small); } }
-
-/* Scroll reveals */
-.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.8s cubic-bezier(.14, 1, .34, 1), transform 0.8s cubic-bezier(.14, 1, .34, 1); transition-delay: calc(var(--i, 0) * 120ms); }
-.reveal.in { opacity: 1; transform: none; }
-.card.reveal { transition-delay: calc(var(--i, 0) * 90ms); }
-/* Headline words fan in one at a time; tag pills wipe open */
-.words .w, .words .tag { opacity: 0; transform: translateY(0.35em); transition: opacity 0.6s cubic-bezier(.14, 1, .34, 1), transform 0.6s cubic-bezier(.14, 1, .34, 1), clip-path 0.6s cubic-bezier(.14, 1, .34, 1); transition-delay: calc(var(--i, 0) * 90ms); }
-.words .tag { clip-path: inset(0 100% 0 0 round 999px); }
-.words.in .w, .words.in .tag { opacity: 1; transform: none; clip-path: inset(0 0 0 0 round 999px); }
-.words .w { display: inline-block; }
-.fan > span { opacity: 0; transform: translateX(-24px); transition: opacity 0.7s cubic-bezier(.14, 1, .34, 1), transform 0.7s cubic-bezier(.14, 1, .34, 1); }
-.fan > span:nth-child(2) { transition-delay: 120ms; }
-.fan > span:nth-child(3) { transition-delay: 240ms; }
-.fan.in > span { opacity: 1; transform: none; }
-.fan .dot { transform: scale(0); transition: transform 0.5s cubic-bezier(.14, 1, .34, 1) 300ms; }
-.fan.in .dot { transform: scale(1); }
-.progress .fill { width: 0; transition: width 1.4s cubic-bezier(.14, 1, .34, 1) 200ms; }
-.band .frame img { will-change: transform; transform: translateY(calc(var(--py, 0) * 1px)) scale(1.06); }
-.giant .g-shapes span { transform: translateY(calc(var(--py, 0) * var(--k, 1) * 1px)); }
-.giant .g-shapes .p1 { --k: -0.5; } .giant .g-shapes .b1 { --k: 0.35; } .giant .g-shapes .p2 { --k: -0.25; }
-@media (prefers-reduced-motion: reduce) {
-  .wordmark .ch, .shapes span, .scroll-hint, .kit-wrap.lit .spark-burst { animation: none; opacity: 1; transform: none; }
-  .wordmark, .arm-wrap, .kit-wrap .hero-art, .band .frame img, .giant .g-shapes span { transform: none !important; }
-  .reveal, .words .w, .words .tag, .fan > span, .fan .dot { opacity: 1; transform: none; clip-path: none; transition: none; }
-  .progress .fill { transition: none; }
-}
-
-/* Inner pages */
-.page { padding-top: calc(var(--spacer-xl) - 20px); padding-bottom: var(--spacer-small); row-gap: 24px; }
-.page .h-statement { grid-column: 1 / -1; }
-.page .intro { grid-column: 1 / -1; max-width: 640px; }
-@media (min-width: 834px) { .page .h-statement, .page .intro { grid-column: 2 / span 10; } }
-.block { padding-block: var(--spacer-small); row-gap: 40px; }
-.block .text { grid-column: 1 / -1; }
-.block .panel { grid-column: 1 / -1; background: var(--white); border-radius: var(--radius-medium); padding: 40px var(--gutter); }
-.block .text .body { margin-top: 24px; max-width: 520px; }
-.block .text > img { margin-top: 32px; border-radius: var(--radius-medium); aspect-ratio: 3 / 2; object-fit: cover; width: 100%; }
-@media (min-width: 834px) { .block .text { grid-column: 1 / span 5; } .block .panel { grid-column: 7 / span 6; padding: 48px 40px; } }
-@media (max-width: 833px) { .block [style*="grid-column: 7"] { grid-column: 1 / -1 !important; } .block [style*="grid-column: 1 / span 6"] { grid-column: 1 / -1 !important; } }
-label { display: block; font-weight: 700; font-size: 14px; margin-bottom: 6px; }
-input, select, textarea { width: 100%; font: inherit; font-size: 16px; padding: 12px 16px; border: 1px solid var(--grey-100); border-radius: 14px; background: var(--grey-10); color: var(--black); }
-input:focus, select:focus, textarea:focus { outline: 2px solid var(--teal); outline-offset: 1px; border-color: var(--teal); }
+/* Forms */
+label { display: block; font-weight: 600; margin-bottom: 6px; color: var(--navy); font-size: 16px; }
+input[type="text"], input[type="email"], input[type="number"], select, textarea { width: 100%; padding: 11px 12px; border: 1px solid #b9c2cc; border-radius: 6px; font: inherit; font-size: 17px; color: var(--text); background: var(--white); }
+input:focus, select:focus, textarea:focus { outline: 2px solid var(--blue); outline-offset: 1px; border-color: var(--blue); }
 textarea { min-height: 120px; resize: vertical; }
-.field { margin-bottom: 16px; }
-.two-col { display: grid; grid-template-columns: 1fr; gap: 0 16px; }
-@media (min-width: 600px) { .two-col { grid-template-columns: 1fr 1fr; } }
-.note { font-size: 14px; opacity: 0.7; margin-top: 12px; }
-.msg { display: none; margin-top: 14px; font-size: 15px; }
-.msg.show { display: block; }
-.amounts { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
-.amount { font: inherit; font-weight: 700; padding: 9px 18px; border: 1px solid var(--grey-100); border-radius: 999px; background: var(--white); cursor: pointer; color: var(--black); }
-.amount.selected { background: var(--teal); border-color: var(--teal); color: var(--white); }
-.zelle { background: var(--grey-10); border-radius: var(--radius-small); padding: 22px 24px; }
-.zelle .num { display: block; font-size: 30px; font-weight: 700; letter-spacing: -0.02em; margin: 4px 0 10px; }
-table { width: 100%; border-collapse: collapse; font-size: 15px; }
-th, td { text-align: left; vertical-align: top; padding: 10px 12px 10px 0; border-bottom: 1px solid rgba(6,26,30,0.15); }
-th { font-size: 13px; opacity: 0.7; font-weight: 700; }
-td ul { padding-left: 16px; list-style: disc; }
+.field { margin-bottom: 18px; }
+.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.form-note { font-size: 15px; color: var(--muted); margin-top: 12px; }
+.form-message { display: none; margin-top: 14px; padding: 12px 14px; border-radius: 6px; background: var(--band); font-size: 16px; }
+.form-message.show { display: block; }
+.required { color: #b42318; }
+.amounts { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 18px; }
+.amount { font: 600 17px var(--sans); padding: 10px 18px; border: 2px solid var(--line); border-radius: 6px; background: var(--white); color: var(--navy); cursor: pointer; }
+.amount.selected { border-color: var(--blue); background: var(--blue); color: var(--white); }
+.zelle { border: 1px solid var(--line); border-radius: 8px; padding: 22px 24px; background: var(--band); }
+.zelle-number { font-family: var(--serif); font-size: 28px; font-weight: 700; color: var(--navy); margin: 4px 0 10px; }
+
+/* Tables */
+table { width: 100%; border-collapse: collapse; font-size: 16px; }
+th, td { text-align: left; vertical-align: top; padding: 12px 14px; border: 1px solid var(--line); }
+th { background: var(--band); color: var(--navy); font-weight: 700; }
+td ul { margin: 0; padding-left: 18px; }
 td li { margin-bottom: 4px; }
-.h-sub { font-size: 22px; font-weight: 700; margin-bottom: 8px; }
-.h-sub + p, .panel p { font-size: 16px; }
-@media (max-width: 600px) {
+
+/* Notice box */
+.notice { border-left: 4px solid var(--yellow); background: var(--band); padding: 20px 24px; border-radius: 0 8px 8px 0; }
+.notice p:last-child { margin-bottom: 0; }
+
+/* CTA band */
+.cta { background: var(--navy); color: var(--white); padding: 64px 0; }
+.cta h2 { color: var(--white); }
+.cta p { color: rgba(255,255,255,0.85); max-width: 620px; font-size: 19px; }
+.cta .btn-outline { color: var(--white); border-color: var(--white); }
+.cta .btn-outline:hover { background: var(--white); color: var(--navy); }
+
+/* Footer */
+.site-footer { background: var(--band); border-top: 1px solid var(--line); padding: 56px 0 28px; font-size: 16px; color: var(--muted); }
+.footer-cols { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 40px; }
+.site-footer h4 { color: var(--navy); }
+.site-footer ul { list-style: none; padding: 0; margin: 0; }
+.site-footer li { margin-bottom: 8px; }
+.site-footer a { color: var(--text); text-decoration: none; }
+.site-footer a:hover { color: var(--blue); text-decoration: underline; }
+.site-footer .logo { font-size: 20px; margin-bottom: 12px; }
+.footer-bottom { border-top: 1px solid var(--line); margin-top: 40px; padding-top: 20px; font-size: 14px; }
+.footer-bottom p { margin: 0 0 6px; }
+
+/* Responsive */
+@media (max-width: 960px) {
+  .cols-3, .cols-4, .stats { grid-template-columns: 1fr 1fr; }
+  .footer-cols { grid-template-columns: 1fr 1fr; }
+  .hero .container { grid-template-columns: 1fr; gap: 32px; }
+  .hero h1 { font-size: 36px; }
+  .menu-toggle { display: block; }
+  .nav { display: none; position: absolute; left: 0; right: 0; top: 76px; background: var(--white); border-bottom: 1px solid var(--line); padding: 8px 24px 20px; flex-direction: column; align-items: stretch; }
+  .nav.open { display: flex; }
+  .nav a { padding: 12px 8px; border-radius: 4px; }
+  .nav a[aria-current="page"] { box-shadow: inset 4px 0 0 var(--yellow); border-radius: 0; padding-left: 12px; }
+  .nav .btn { margin: 12px 0 0; text-align: center; }
+}
+@media (max-width: 640px) {
+  body { font-size: 17px; }
+  h1 { font-size: 32px; } .hero h1 { font-size: 30px; }
+  h2 { font-size: 26px; }
+  section { padding: 52px 0; }
+  .hero { padding: 40px 0; }
+  .hero p, .page-header p { font-size: 18px; }
+  .cols-2, .cols-3, .cols-4, .stats, .footer-cols, .field-row { grid-template-columns: 1fr; }
+  .btn { display: block; text-align: center; }
+  .btn-row { flex-direction: column; }
+  .stat-number { font-size: 38px; }
   table.model thead { display: none; }
-  table.model tr, table.model td { display: block; padding-right: 0; }
-  table.model td::before { content: attr(data-label); display: block; font-weight: 700; font-size: 13px; margin-bottom: 4px; }
-  .btn { height: 40px; font-size: 16px; padding: 0 14px; }
+  table.model tr, table.model td { display: block; }
+  table.model td { border-top: none; }
+  table.model tr { border-top: 1px solid var(--line); }
+  table.model td::before { content: attr(data-label); display: block; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
 }
 
-/* Print: funders page as one sheet */
+/* Print: the For funders page as one sheet */
 @media print {
   @page { size: letter; margin: 0.5in; }
-  body { background: #fff; font-size: 10.5px; line-height: 1.35; color: #000; }
-  header, footer, .no-print, .deco, .g-shapes { display: none !important; }
-  section, .block { padding: 6px 0 !important; }
-  .page { padding: 0 !important; }
-  .page .h-statement { font-size: 20px !important; line-height: 1.2; margin-bottom: 2px; }
-  .page .intro { font-size: 11px; }
-  .h-sub, h2 { font-size: 13px !important; margin-bottom: 3px; }
-  p, li, td { font-size: 10px !important; margin-bottom: 3px; }
-  .panel { padding: 0 !important; border-radius: 0; background: none; }
-  .block { display: block; }
-  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-  th, td { padding: 3px 6px 3px 0; }
-  .grid { display: block; padding: 0; }
-  .tag { background: none !important; color: #000 !important; padding: 0; }
+  body { font-size: 10.5px; line-height: 1.4; color: #000; }
+  .site-header, .site-footer, .cta, .no-print { display: none !important; }
+  section, .page-header { padding: 6px 0; border: 0; }
+  .page-header h1 { font-size: 20px; margin-bottom: 2px; }
+  .page-header p, .section-heading p { font-size: 11px; }
+  h2 { font-size: 14px; margin-bottom: 4px; }
+  h3 { font-size: 12px; margin-bottom: 3px; }
+  p, li, td { margin-bottom: 3px; font-size: 10px; }
+  .section-heading { margin-bottom: 6px; }
+  .section-heading h2::after { display: none; }
+  .cols-2 { gap: 16px; align-items: start; }
+  th, td { padding: 4px 6px; font-size: 9.5px; }
+  .notice { padding: 8px 10px; }
+  .container { max-width: none; padding: 0; }
 }
 
 </style>
 </head>
 <body>
-<header>
-  <a class="mark" href="index.html" aria-label="Future Spark home"><img src="images/mark.svg" alt=""></a>
-  <nav class="tabs" aria-label="Pages">
-    <a href="index.html" aria-current="page">Home</a>
-    <a href="get-involved.html">Get involved</a>
-    <a href="for-funders.html">For funders</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-  <div class="actions">
-    <a class="btn" href="get-involved.html#request">Request kits</a>
-    <a class="btn" href="get-involved.html#sponsor">Sponsor a kit</a>
+<header class="site-header">
+  <div class="container">
+    <a class="logo" href="index.html"><img src="images/mark.svg" alt="">Future Spark</a>
+    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainNav">Menu</button>
+    <nav class="nav" id="mainNav" aria-label="Main">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="about.html">About</a>
+      <a href="kits.html">Our Kits</a>
+      <a href="impact.html">Impact</a>
+      <a href="get-involved.html">Get Involved</a>
+      <a href="for-funders.html">For Funders</a>
+      <a href="contact.html">Contact</a>
+      <a class="btn btn-primary" href="get-involved.html#sponsor">Sponsor a Kit</a>
+    </nav>
   </div>
 </header>
 <main>
 
-<section class="hero-track" id="hero" aria-label="Future Spark">
-  <div class="hero-pin">
-    <div class="arm-wrap" aria-hidden="true">
-      <object class="arm-obj" data="images/robot-arm.svg" type="image/svg+xml" tabindex="-1"></object>
+<section class="hero">
+  <div class="container">
+    <div>
+      <h1>Free hands-on STEM kits for elementary students in Ohio</h1>
+      <p>High school students design, build, and deliver every kit. Schools and community organizations in Columbus, Cleveland, and nearby counties receive them at no cost.</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="get-involved.html#request">Request Kits</a>
+        <a class="btn btn-outline" href="kits.html">See the Kits</a>
+      </div>
     </div>
-    <div class="kit-wrap" aria-hidden="true"><img class="hero-art" src="images/hero-kit.svg" alt=""><span class="spark-burst"></span></div>
-    <h1 class="wordmark" aria-label="Future Spark"><span>FUTURE</span><span>SPARK</span></h1>
-    <div class="shapes" aria-hidden="true"><span class="pill first"></span><span class="ball"></span><span class="pill"></span></div>
-    <div class="scroll-hint" aria-hidden="true">Scroll</div>
+    <img src="images/kit-assembly.jpg" alt="A Future Spark student sealing a kit at a kitchen table with a stack of finished kits beside him">
   </div>
 </section>
 
-<section class="grid statement">
-  <h2 class="h-statement words"><span class="tag teal">Future Spark</span> is building <span class="tag white">free</span> <span class="tag coral">hands-on</span> STEM kits so every kid gets to try engineering.</h2>
-  <div class="body p-large reveal">
-    <p><strong>We're starting</strong> with the schools that get the least science. High school students in Columbus design each kit, buy the parts, pack every bag by hand, and deliver them in person to elementary schools, shelters, and community organizations across Central Ohio. It costs the school nothing.</p>
-    <p>Every kit holds two hands-on activities, all the materials, and step-by-step instructions a kid can follow alone. $25 covers the materials for one kit. Kids open the bag, build, and find out what they think.</p>
-    <ul class="numbers">
-      <li><strong data-count="300">0</strong> kits delivered</li>
-      <li><strong data-count="3">0</strong> elementary schools</li>
-      <li><strong data-count="3">0</strong> community organizations</li>
-      <li><strong>$0</strong> to students</li>
-    </ul>
-  </div>
-</section>
-
-<section class="grid build">
-  <div class="text">
-    <h2 class="h-section stack fan">
-      <span><span class="tag teal">A kid opens</span></span>
-      <span><span class="dot yellow"></span><span class="tag white">the bag</span></span>
-    </h2>
-    <div class="body p-large reveal">
-      <p>No instructions from an adult, no special tools. The parts, the wheels, the sail, and a step-by-step card are all in the bag. Twenty minutes later there is a car on the desk that the kid built, and a race down the hallway.</p>
-      <ol class="steps">
-        <li><b>1</b> Open the bag and lay out the parts</li>
-        <li><b>2</b> Push the wheels onto the frame</li>
-        <li><b>3</b> Raise the sail and race it</li>
-      </ol>
-    </div>
-  </div>
-  <div class="scene reveal"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 560" class="kid-scene" role="img" aria-label="Illustration of a kid at a table assembling a sail car from a Future Spark kit">
-  <style>
-    .kid-scene .ln { fill: #ffffff; stroke: #061a1e; stroke-width: 8; stroke-linejoin: round; stroke-linecap: round; }
-    .kid-scene .ink { fill: #061a1e; }
-    .kid-scene .blue { fill: #1f5fd6; }
-    .kid-scene .light { fill: #bcd6ff; }
-    .kid-scene .yellow { fill: #ffbd00; }
-    .kid-scene .skin { fill: #f2c9a6; stroke: #061a1e; stroke-width: 8; stroke-linejoin: round; stroke-linecap: round; }
-    .kid-scene .table { fill: #dbd7ca; stroke: #061a1e; stroke-width: 8; }
-    .kid-scene .anim { animation-duration: 9s; animation-iteration-count: infinite; animation-timing-function: cubic-bezier(.4, 0, .2, 1); transform-box: fill-box; transform-origin: center; }
-    .kid-scene .hand-r { animation-name: hand; }
-    .kid-scene .wheel-a { animation-name: wheelA; }
-    .kid-scene .wheel-b { animation-name: wheelB; }
-    .kid-scene .sail { animation-name: sail; transform-origin: 50% 100%; }
-    .kid-scene .car { animation-name: car; }
-    .kid-scene .head { animation-name: head; transform-origin: 50% 100%; }
-    .kid-scene .spark { animation-name: spark; opacity: 0; }
-    @keyframes hand {
-      0% { transform: translate(0, 0); } 12% { transform: translate(-274px, -34px); } 22% { transform: translate(-274px, -34px); } 34% { transform: translate(-60px, -4px); }
-      46% { transform: translate(-224px, -34px); } 56% { transform: translate(-224px, -34px); } 68% { transform: translate(28px, -4px); }
-      80% { transform: translate(-14px, -120px); } 90% { transform: translate(-30px, -30px); } 100% { transform: translate(0, 0); }
-    }
-    @keyframes wheelA { 0%, 12% { transform: translate(0, 0); } 22% { transform: translate(0, -30px); } 34%, 100% { transform: translate(214px, 30px); } }
-    @keyframes wheelB { 0%, 46% { transform: translate(0, 0); } 56% { transform: translate(0, -30px); } 68%, 100% { transform: translate(252px, 30px); } }
-    @keyframes sail { 0%, 70% { transform: scaleY(0); } 82%, 100% { transform: scaleY(1); } }
-    @keyframes car { 0%, 84% { transform: translateX(0); } 94% { transform: translateX(70px); } 100% { transform: translateX(0); } }
-    @keyframes head { 0%, 30%, 64%, 100% { transform: rotate(0deg); } 12%, 46%, 80% { transform: rotate(-6deg); } 90% { transform: rotate(4deg); } }
-    @keyframes spark { 0%, 83% { opacity: 0; transform: scale(0.4); } 88% { opacity: 1; transform: scale(1.1); } 96%, 100% { opacity: 0; transform: scale(1.4); } }
-    @media (prefers-reduced-motion: reduce) { .kid-scene .anim { animation: none; } .kid-scene .sail { transform: none; } .kid-scene .wheel-a { transform: translate(214px, 30px); } .kid-scene .wheel-b { transform: translate(252px, 30px); } }
-  </style>
-  <!-- table -->
-  <rect class="table" x="40" y="380" width="720" height="26" rx="13"/>
-  <rect class="ink" x="90" y="406" width="16" height="130"/>
-  <rect class="ink" x="694" y="406" width="16" height="130"/>
-  <!-- kid: body behind table, head, left arm resting -->
-  <g class="kid">
-    <rect class="blue" x="520" y="250" width="190" height="150" rx="60" stroke="#061a1e" stroke-width="8"/>
-    <g class="head anim">
-      <circle class="skin" cx="615" cy="190" r="70"/>
-      <path class="ink" d="M545 175 C550 120 680 110 685 175 C660 150 600 150 545 175 Z"/>
-      <circle class="ink" cx="592" cy="196" r="6"/><circle class="ink" cx="638" cy="196" r="6"/>
-      <path d="M598 222 Q615 236 632 222" fill="none" stroke="#061a1e" stroke-width="6" stroke-linecap="round"/>
-    </g>
-    <path class="skin" d="M540 300 C500 320 470 350 460 380 L520 380 C525 355 540 335 560 320 Z"/>
-    <!-- right arm and hand, moves parts -->
-    <g class="hand-r anim">
-      <path class="skin" d="M560 300 C520 330 470 360 420 372 L430 396 C480 388 540 360 585 325 Z"/>
-      <circle class="skin" cx="424" cy="384" r="26"/>
-    </g>
-  </g>
-  <!-- open kit bag with parts -->
-  <g class="bag">
-    <rect class="ln" x="90" y="290" width="200" height="90" rx="20"/>
-    <rect class="yellow" x="80" y="300" width="220" height="16" rx="8"/>
-    <path class="ln" d="M110 290 L120 250 L260 250 L270 290" fill="#f6f4f0"/>
-    <!-- parts pile: wheels -->
-    <g class="wheel-a anim"><circle class="ink" cx="150" cy="350" r="18"/><circle class="light" cx="150" cy="350" r="7"/></g>
-    <g class="wheel-b anim"><circle class="ink" cx="200" cy="350" r="18"/><circle class="light" cx="200" cy="350" r="7"/></g>
-    <rect class="light" x="230" y="335" width="40" height="30" rx="6" stroke="#061a1e" stroke-width="6"/>
-  </g>
-  <!-- the sail car being built -->
-  <g class="car anim">
-    <rect class="ln" x="330" y="340" width="160" height="26" rx="10"/>
-    <rect class="ink" x="360" y="366" width="8" height="14"/><rect class="ink" x="448" y="366" width="8" height="14"/>
-    <g class="sail anim">
-      <rect class="ink" x="406" y="250" width="8" height="92"/>
-      <path class="yellow" d="M414 254 L470 330 L414 330 Z" stroke="#061a1e" stroke-width="6" stroke-linejoin="round"/>
-    </g>
-    <g class="spark anim">
-      <path class="blue" d="M470 214 C470 236 480 246 502 246 C480 246 470 256 470 278 C470 256 460 246 438 246 C460 246 470 236 470 214 Z"/>
-      <path class="yellow" d="M512 196 C512 206 516 210 526 210 C516 210 512 214 512 224 C512 214 508 210 498 210 C508 210 512 206 512 196 Z"/>
-    </g>
-  </g>
-</svg>
-</div>
-</section>
-
-<section class="band" aria-label="Photos">
-  <div class="frame slides" data-carousel>
-    <img class="active" src="images/kit-assembly-hero.jpg" alt="A Future Spark student sealing a kit at a kitchen table with a stack of finished kits">
-    <img src="images/box-of-kits-hero.jpg" alt="A cardboard box packed with sealed kits ready for delivery">
-  </div>
-  <span class="cut a"></span><span class="cut b"></span>
-  <div class="dots" role="tablist"><button type="button" aria-label="Show photo 1" aria-current="true"></button><button type="button" aria-label="Show photo 2" aria-current="false"></button></div>
-</section>
-
-<section class="grid feature">
-  <div class="text">
-    <h2 class="h-section stack fan">
-      <span><span class="tag black">Our kits are</span></span>
-      <span><span class="dot yellow"></span><span class="tag coral">built by hand</span></span>
-    </h2>
-    <div class="body p-large reveal">
-      <p><strong>Future Spark</strong> started as a class project. Students were asked to find a gap for marginalized kids in the community and bridge it. Founder Satvik Surapaneni kept noticing the same thing: we ask kids what they want to be, but a lot of them decide they're "not an engineering person" without ever building a circuit or designing a bridge.</p>
-      <p>Nobody gets interested in engineering from a definition. You get interested by making something, breaking it, and figuring out why. So a few of us started designing kits, buying parts, and packing them on the living room floor. We deliver them ourselves, on evenings and weekends, funded so far by door-to-door fundraising and school events.</p>
-    </div>
-  </div>
-  <div class="media reveal"><img src="images/build-night-wide.jpg" alt="Two Future Spark students sitting on a living room floor sealing kits into bags"></div>
-</section>
-
-<section class="grid cards">
-  <div class="head">
-    <h2 class="h-section stack fan">
-      <span><span class="tag teal">What's inside</span></span>
-      <span><span class="dot white"></span><span class="tag white">every kit</span></span>
-    </h2>
-  </div>
-  <div class="card-row">
-    <div class="card reveal"><img src="images/sail-car-kit.jpg" alt="A sealed kit with a sail car instruction card"><h3 class="h-card">Two activities</h3><p>One of them is a sail car: a wooden frame, wheels, and a sail that kids put together and race.</p></div>
-    <div class="card reveal"><img src="images/kit-contents.jpg" alt="Wooden parts, wheels, and a motor in a sealed bag"><h3 class="h-card">All the parts</h3><p>Every piece a kid needs is in the bag, labeled with its contents. Nothing to buy, no special tools.</p></div>
-    <div class="card reveal"><img src="images/kit-assembly.jpg" alt="A student packing a kit at a kitchen table"><h3 class="h-card">Packed by hand</h3><p>Our students assemble, label, and seal every kit themselves.</p></div>
-    <div class="card reveal"><img src="images/box-of-kits.jpg" alt="A cardboard box full of finished kits"><h3 class="h-card">Delivered free</h3><p>We bring the box to the school or organization in person. No cost, no paperwork.</p></div>
-  </div>
-</section>
-
-<section class="band" aria-label="Photo">
-  <div class="frame"><img src="images/box-of-kits-hero.jpg" alt="A box of sealed kits on the floor, ready to go"></div>
-  <span class="cut a"></span><span class="cut b"></span>
-</section>
-
-<section class="grid feature">
-  <div class="text">
-    <h2 class="h-section stack fan">
-      <span><span class="dot coral"></span><span class="tag coral">300 kits</span></span>
-      <span><span class="tag black">delivered.</span></span>
-      <span><span class="tag white">1,000 to go.</span></span>
-    </h2>
-    <div class="body p-large reveal">
-      <p><strong>Our next goal</strong> is 1,000 kits for ten or more elementary schools across Ohio. Buying materials in bulk lowers the cost of every kit and lets us reach schools beyond Columbus for the first time.</p>
-      <div class="progress"><div class="fill" data-width="30%"></div></div>
-      <div class="progress-labels"><span>300 delivered</span><span>1,000 goal</span></div>
-      <p style="margin-top: 32px"><strong>Who we work with</strong></p>
-      <ul class="partners">
-        <li>Andrew's House <span>— community organization, Delaware, OH</span></li>
-        <li>Family Promise of Delaware County <span>— family shelter network</span></li>
-        <li>Makerspace Central <span>— community makerspace</span></li>
-        <li>Three elementary schools in Central Ohio</li>
-      </ul>
-    </div>
-  </div>
-  <div class="media outlined reveal"><img src="images/sail-car-kit-wide.jpg" alt="A packed kit held in one hand, showing the sail car instruction card"></div>
-</section>
-
-<section class="grid bigcard">
-  <div class="title">
-    <h2 class="h-section stack fan">
-      <span><span class="tag yellow">Put a kit</span> on a</span>
-      <span>student's <span class="tag grey">desk</span></span>
-    </h2>
-  </div>
-  <div class="panel reveal">
-    <h3 class="h-big">A school tells us how many students it serves. We build the kits and bring them. That's the whole process.</h3>
-    <div class="body">
-      <p>Schools, shelters, and community organizations in Central Ohio can request kits with one short form. Sponsors cover the materials: $25 makes one kit, $250 makes a classroom set. Volunteers help us build, deliver, and write instructions.</p>
-      <ul class="chips"><li>Elementary schools</li><li>Shelters</li><li>After-school programs</li><li>Sponsors</li><li>Volunteers</li><li>Funders</li></ul>
-      <a class="btn" href="get-involved.html">Get involved</a>
+<section class="band">
+  <div class="container">
+    <div class="stats">
+      <div class="stat"><div class="stat-number">300</div><div class="stat-label">Kits delivered</div><div class="stat-note">As of September 2026</div></div>
+      <div class="stat"><div class="stat-number">3</div><div class="stat-label">Elementary schools</div><div class="stat-note">Central Ohio</div></div>
+      <div class="stat"><div class="stat-number">3</div><div class="stat-label">Community organizations</div><div class="stat-note">Shelters and a makerspace</div></div>
+      <div class="stat"><div class="stat-number">$0</div><div class="stat-label">Cost to schools</div><div class="stat-note">Free to every student</div></div>
     </div>
   </div>
 </section>
 
-<section class="giant">
-  <div class="g-shapes" aria-hidden="true"><span class="p1"></span><span class="b1"></span><span class="p2"></span></div>
-  <h2 class="h-giant"><span class="reveal" style="--i:0">Get in</span><span class="l2 reveal" style="--i:1">touch</span><span class="l3 reveal" style="--i:2">with us</span></h2>
-  <a class="cta reveal" style="--i:3" href="mailto:futuresparks0@gmail.com">Email us</a>
+<section>
+  <div class="container">
+    <div class="section-heading">
+      <h2>How it works</h2>
+      <p>Three steps. Nothing to buy, nothing to prepare.</p>
+    </div>
+    <div class="cols-3">
+      <div class="card"><h3>We build the kits</h3><p>Students design each kit and pack it by hand. Every kit has two activities, all materials, and instructions.</p></div>
+      <div class="card"><h3>You tell us your numbers</h3><p>A school or organization tells us how many students it serves and their grade level.</p></div>
+      <div class="card"><h3>We deliver, free</h3><p>We bring the kits in person. Students open the bag, build, and find out what they think of engineering.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="container">
+    <div class="cols-2">
+      <img class="photo" src="images/sail-car-kit-wide.jpg" alt="A sealed Future Spark kit with a sail car instruction card">
+      <div>
+        <div class="section-heading"><h2>Every kit is a different build</h2></div>
+        <p>Circuits, solar-powered cars, biology, environmental science. Each kit is built around a real project a student can finish on their own. The one pictured is a sail car.</p>
+        <p><strong>$25 in materials makes one kit.</strong> Students donate all of the labor.</p>
+        <div class="btn-row"><a class="btn btn-outline" href="kits.html">Explore the Kits</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="cols-2">
+      <div>
+        <div class="section-heading"><h2>Started by students, for students</h2></div>
+        <p>Future Spark began as a class project in Columbus. The idea: many kids decide they are not "an engineering person" before they have ever built anything. A kit lets them try first.</p>
+        <p>Today we serve schools and community organizations in Columbus and Cleveland, and we are expanding to counties like Fairfax.</p>
+        <div class="btn-row"><a class="btn btn-outline" href="about.html">Our Story</a></div>
+      </div>
+      <img class="photo" src="images/build-night-wide.jpg" alt="Two Future Spark students sitting on a living room floor packing kits">
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="container">
+    <div class="cols-2 top">
+      <div>
+        <div class="section-heading"><h2>Next goal: 1,000 kits</h2></div>
+        <p>300 delivered so far. The next 700 reach ten or more schools across Ohio.</p>
+        <div class="progress"><div style="width: 30%"></div></div>
+        <div class="progress-labels"><span>300 delivered</span><span>Goal: 1,000</span></div>
+      </div>
+      <div>
+        <div class="section-heading"><h2>Partners</h2></div>
+        <ul class="partners">
+          <li>Andrew's House <span>Delaware, Ohio</span></li>
+          <li>Family Promise of Delaware County <span>Family shelter network</span></li>
+          <li>Makerspace Central <span>Community makerspace</span></li>
+          <li>Three elementary schools <span>Central Ohio</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container">
+    <h2>Bring free STEM kits to your students</h2>
+    <p>One short form. We build the kits and deliver them in person.</p>
+    <div class="btn-row">
+      <a class="btn btn-light" href="get-involved.html#request">Request Kits</a>
+      <a class="btn btn-outline" href="get-involved.html#sponsor">Sponsor a Kit</a>
+    </div>
+  </div>
 </section>
 </main>
-<footer>
-  <div class="footbar">
-    <div class="left">
-      <a class="mark" href="index.html" aria-label="Future Spark home"><img src="images/mark.svg" alt=""></a>
-      <span>Columbus, OH</span>
-      <a href="mailto:futuresparks0@gmail.com">futuresparks0@gmail.com</a>
-      <a href="https://www.instagram.com/ohs_future_engineers" target="_blank" rel="noopener">Instagram</a>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-cols">
+      <div>
+        <a class="logo" href="index.html"><img src="images/mark.svg" alt="">Future Spark</a>
+        <p>A student-led nonprofit initiative that builds free hands-on STEM kits for elementary schools, shelters, and community organizations in Columbus, Cleveland, and surrounding Ohio counties.</p>
+      </div>
+      <div>
+        <h4>Learn</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="kits.html">Our Kits</a></li>
+          <li><a href="impact.html">Impact</a></li>
+          <li><a href="for-funders.html">For Funders</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Act</h4>
+        <ul>
+          <li><a href="get-involved.html#request">Request Kits</a></li>
+          <li><a href="get-involved.html#sponsor">Sponsor a Kit</a></li>
+          <li><a href="get-involved.html#volunteer">Volunteer</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:futuresparks0@gmail.com">futuresparks0@gmail.com</a></li>
+          <li><a href="https://www.instagram.com/ohs_future_engineers" target="_blank" rel="noopener">Instagram</a></li>
+          <li>Columbus, Ohio</li>
+        </ul>
+      </div>
     </div>
-    <div class="right">
-      <a href="for-funders.html">For funders</a>
-      <a href="contact.html">Contact</a>
-      <span>&copy; Future Spark <span id="year">2026</span></span>
+    <div class="footer-bottom">
+      <p>Future Spark is a student-led initiative based in Columbus, Ohio, formerly Future Engineers. We are not yet a registered charitable organization. Sponsorships go directly toward kit materials.</p>
+      <p>&copy; <span id="year">2026</span> Future Spark. All rights reserved.</p>
     </div>
   </div>
-  <p class="legal">Future Spark is a student-led initiative based in Columbus, Ohio, formerly Future Engineers. We are not yet a registered charitable organization. Sponsorships go directly toward kit materials.</p>
 </footer>
 <script>
-// Future Spark site scripts
-
 document.addEventListener('DOMContentLoaded', function () {
   var EMAIL = 'futuresparks0@gmail.com';
 
-  // Footer year
   var year = document.getElementById('year');
   if (year) year.textContent = new Date().getFullYear();
 
-  // Forms: open the visitor's email app with the answers filled in
-  var forms = document.querySelectorAll('form[data-subject]');
-  forms.forEach(function (form) {
+  var toggle = document.getElementById('menuToggle');
+  var nav = document.getElementById('mainNav');
+  if (toggle && nav) {
+    toggle.addEventListener('click', function () {
+      var open = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  }
+
+  // Forms open the visitor's email app with the answers filled in.
+  document.querySelectorAll('form[data-subject]').forEach(function (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-      var message = form.querySelector('.msg');
+      var message = form.querySelector('.form-message');
       if (!form.checkValidity()) {
         message.textContent = 'Please fill in the required fields.';
-        message.className = 'msg show';
+        message.classList.add('show');
         form.reportValidity();
         return;
       }
-      var lines = [];
-      var name = '';
+      var lines = [], name = '';
       form.querySelectorAll('input, select, textarea').forEach(function (field) {
         if (!field.name) return;
         if (field.name === 'Name') name = field.value;
@@ -628,15 +434,15 @@ document.addEventListener('DOMContentLoaded', function () {
       });
       var subject = form.getAttribute('data-subject') + (name ? ' from ' + name : '');
       window.location.href = 'mailto:' + EMAIL + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(lines.join('\n'));
-      message.innerHTML = 'Your email app should open with the message filled in. If it does not, please email us at <a href="mailto:' + EMAIL + '">' + EMAIL + '</a>.';
-      message.className = 'msg show';
+      message.innerHTML = 'Your email app should open with the message filled in. If it does not, email us at <a href="mailto:' + EMAIL + '">' + EMAIL + '</a>.';
+      message.classList.add('show');
     });
   });
 
-  // Sponsor amounts
+  // Sponsorship amounts
   var amounts = document.querySelectorAll('.amount');
   var custom = document.getElementById('customAmount');
-  var customInput = document.getElementById('s-custom');
+  var customInput = document.getElementById('customValue');
   var giftAmount = document.getElementById('giftAmount');
   var giftKits = document.getElementById('giftKits');
   function updateGift(value) {
@@ -659,141 +465,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
   });
-  if (customInput) {
-    customInput.addEventListener('input', function () { updateGift(Number(customInput.value) || 0); });
-  }
-
-  // Copy buttons
-  document.querySelectorAll('[data-copy]').forEach(function (button) {
-    button.addEventListener('click', function () {
-      var text = document.getElementById(button.getAttribute('data-copy')).textContent.trim();
-      var original = button.textContent;
-      function done() { button.textContent = 'Copied'; setTimeout(function () { button.textContent = original; }, 1500); }
-      if (navigator.clipboard) navigator.clipboard.writeText(text).then(done, done); else done();
-    });
-  });
-});
-
-// Photo band carousel: wipe between images, dots switch slides, auto-advance
-document.addEventListener('DOMContentLoaded', function () {
-  document.querySelectorAll('[data-carousel]').forEach(function (slides) {
-    var imgs = slides.querySelectorAll('img');
-    var dots = slides.parentElement.querySelectorAll('.dots button');
-    if (imgs.length < 2) return;
-    var i = 0, timer;
-    function show(n) {
-      i = n % imgs.length;
-      imgs.forEach(function (im, k) { im.classList.toggle('active', k === i); });
-      dots.forEach(function (d, k) { d.setAttribute('aria-current', k === i ? 'true' : 'false'); });
-    }
-    dots.forEach(function (d, k) { d.addEventListener('click', function () { clearInterval(timer); show(k); }); });
-    timer = setInterval(function () { show(i + 1); }, 5000);
-  });
-});
-
-// Animations: hero arm on scroll, wordmark letters, headline word fans, reveals, counters, parallax
-document.addEventListener('DOMContentLoaded', function () {
-  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  // Split the wordmark into letters so they can rise in one at a time
-  var wordmark = document.querySelector('.wordmark');
-  if (wordmark && !reduce) {
-    var n = 0;
-    wordmark.querySelectorAll('span').forEach(function (line, li) {
-      if (li === 1) line.classList.add('line2');
-      var text = line.textContent; line.textContent = '';
-      text.split('').forEach(function (ch) {
-        var s = document.createElement('span'); s.className = 'ch'; s.textContent = ch; s.style.setProperty('--i', n++); line.appendChild(s);
-      });
-    });
-  }
-
-  // Wrap the plain words of fan-in headlines (tags stay whole)
-  document.querySelectorAll('.words').forEach(function (h) {
-    var i = 0;
-    Array.prototype.slice.call(h.childNodes).forEach(function (node) {
-      if (node.nodeType === 3) {
-        var frag = document.createDocumentFragment();
-        node.textContent.split(/(\s+)/).forEach(function (part) {
-          if (!part) return;
-          if (/^\s+$/.test(part)) { frag.appendChild(document.createTextNode(part)); return; }
-          var w = document.createElement('span'); w.className = 'w'; w.textContent = part; w.style.setProperty('--i', i++); frag.appendChild(w);
-        });
-        h.replaceChild(frag, node);
-      } else if (node.nodeType === 1) { node.style.setProperty('--i', i++); }
-    });
-  });
-
-  // Stagger index for card rows
-  document.querySelectorAll('.card-row .card').forEach(function (c, i) { c.style.setProperty('--i', i); });
-
-  // Count-up numbers
-  function countUp(el) {
-    var target = Number(el.getAttribute('data-count')), start = null, dur = 1200;
-    function tick(ts) { if (!start) start = ts; var p = Math.min((ts - start) / dur, 1); var e = 1 - Math.pow(1 - p, 3); el.textContent = Math.round(target * e).toLocaleString('en-US'); if (p < 1) requestAnimationFrame(tick); }
-    requestAnimationFrame(tick);
-  }
-
-  if (reduce || !('IntersectionObserver' in window)) {
-    document.querySelectorAll('[data-count]').forEach(function (el) { el.textContent = Number(el.getAttribute('data-count')).toLocaleString('en-US'); });
-    document.querySelectorAll('.progress .fill').forEach(function (f) { f.style.width = f.getAttribute('data-width'); });
-    document.querySelectorAll('.reveal, .words, .fan').forEach(function (el) { el.classList.add('in'); });
-    return;
-  }
-
-  var io = new IntersectionObserver(function (entries) {
-    entries.forEach(function (en) {
-      if (!en.isIntersecting) return;
-      var el = en.target; el.classList.add('in'); io.unobserve(el);
-      el.querySelectorAll('[data-count]').forEach(countUp);
-      if (el.hasAttribute('data-count')) countUp(el);
-      el.querySelectorAll('.progress .fill').forEach(function (f) { f.style.width = f.getAttribute('data-width'); });
-    });
-  }, { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
-  document.querySelectorAll('.reveal, .words, .fan, .numbers, .progress').forEach(function (el) { io.observe(el); });
-
-  // Hero: progress 0→1 across the track drives the arm, the fingers, the kit and the wordmark
-  var track = document.getElementById('hero');
-  var pin = track && track.querySelector('.hero-pin');
-  var armObj = track && track.querySelector('.arm-obj');
-  var kit = track && track.querySelector('.kit-wrap');
-  var armSvg = null;
-  if (armObj) armObj.addEventListener('load', function () { try { armSvg = armObj.contentDocument.querySelector('svg'); } catch (e) {} });
-  var bands = document.querySelectorAll('.band .frame img');
-  var giant = document.querySelector('.giant');
-  var lit = false;
-
-  var armWrap = track && track.querySelector('.arm-wrap');
-  function onScroll() {
-    var y = window.scrollY, vh = window.innerHeight;
-    if (track) {
-      var p = Math.max(0, Math.min(1, y / (track.offsetHeight - vh)));
-      pin.style.setProperty('--p', p);
-      // arm: fully above the frame at the top, fingers wrapped over the kit at the end
-      var armH = armWrap.offsetHeight, kitTop = kit.getBoundingClientRect().top - pin.getBoundingClientRect().top;
-      var startY = -armH - 20, endY = kitTop - armH + Math.min(armH * 0.16, 140);
-      var eased = p < 0.5 ? 2 * p * p : 1 - Math.pow(-2 * p + 2, 2) / 2;
-      armWrap.style.setProperty('--arm-y', (startY + (endY - startY) * eased).toFixed(1) + 'px');
-      // fingers open on the way down (0.35→0.75), then close on the kit (0.85→1)
-      var open = p < 0.75 ? Math.max(0, (p - 0.35) / 0.4) : Math.max(0, 1 - (p - 0.75) / 0.2);
-      if (armSvg) armSvg.style.setProperty('--open', open.toFixed(3));
-      if (p > 0.9 && !lit) { lit = true; kit.classList.add('lit'); wordmark && wordmark.classList.add('lit'); }
-      if (p < 0.6 && lit) { lit = false; kit.classList.remove('lit'); wordmark && wordmark.classList.remove('lit'); }
-    }
-    bands.forEach(function (img) {
-      var r = img.parentElement.getBoundingClientRect();
-      if (r.bottom < 0 || r.top > vh) return;
-      img.style.setProperty('--py', ((r.top + r.height / 2 - vh / 2) * -0.08).toFixed(1));
-    });
-    if (giant) {
-      var g = giant.getBoundingClientRect();
-      if (g.bottom > 0 && g.top < vh) giant.style.setProperty('--py', ((g.top - vh / 2) * 0.15).toFixed(1));
-    }
-  }
-  var ticking = false;
-  window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(function () { onScroll(); ticking = false; }); } }, { passive: true });
-  window.addEventListener('resize', onScroll);
-  onScroll();
+  if (customInput) customInput.addEventListener('input', function () { updateGift(Number(customInput.value) || 0); });
 });
 
 </script>

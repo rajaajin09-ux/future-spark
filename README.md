@@ -9,7 +9,7 @@ Static site, no build step. Four pages share one stylesheet and one small script
 - `css/styles.css`, `js/main.js`, `images/`
 
 ## Deploy
-Netlify or Cloudflare Pages: point at this repo, no build command, publish directory `/`. GitHub Pages: Settings → Pages → deploy from `main`, root.
+Netlify or Cloudflare Pages: point at this repo, no build command, publish directory `/`. GitHub Pages: in the repo, Settings → Pages → under "Build and deployment" set Source to **GitHub Actions**. The workflow in `.github/workflows/pages.yml` then deploys every push, and the site is at https://rajaajin09-ux.github.io/future-spark/.
 
 ## Forms
 The forms open the visitor's email app with the answers filled in (no backend needed). To switch to a form service later, give each `<form>` an `action` URL and remove the mailto handler in `js/main.js`.

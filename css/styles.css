@@ -6,9 +6,9 @@
   --grey-100: #dbd7ca;
   --grey-50: #e8e5e0;
   --grey-10: #f6f4f0;
-  --teal: #299093;
-  --yellow: #ffbd00;
-  --coral: #ef6156;
+  --teal: #1f5fd6;
+  --yellow: #bcd6ff;
+  --coral: #ffbd00;
   --gutter: 24px;
   --gap: 16px;
   --spacer-small: 64px;
@@ -65,7 +65,7 @@ section { position: relative; }
 .tag.yellow { background: var(--yellow); color: var(--black); }
 .tag.black { background: var(--black); color: var(--white); }
 .tag.white { background: var(--white); color: var(--black); }
-.tag.grey { background: #8f8c83; color: var(--black); }
+.tag.grey { background: #bcd6ff; color: var(--black); }
 .dot { display: inline-block; width: 1.25em; height: 1.25em; border-radius: 50%; vertical-align: middle; margin-right: 0.15em; flex: none; }
 .dot.yellow { background: var(--yellow); }
 .dot.coral { background: var(--coral); }
@@ -75,7 +75,7 @@ section { position: relative; }
 
 /* Buttons */
 .btn { display: inline-flex; align-items: center; height: 42px; padding: 0 18px; border-radius: 999px; background: var(--teal); color: var(--white); font-weight: 700; font-size: 18px; text-decoration: none; border: 0; cursor: pointer; font-family: inherit; white-space: nowrap; }
-.btn:hover { background: #237c7f; }
+.btn:hover { background: #1a4fb3; }
 .btn.black { background: var(--black); }
 .btn.white { background: var(--white); color: var(--black); }
 .btn.white:hover { background: var(--grey-10); }

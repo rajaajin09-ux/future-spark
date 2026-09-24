@@ -7,25 +7,15 @@ document.addEventListener('DOMContentLoaded', function () {
   var year = document.getElementById('year');
   if (year) year.textContent = new Date().getFullYear();
 
-  // Mobile menu
-  var toggle = document.getElementById('menuToggle');
-  var nav = document.getElementById('mainNav');
-  if (toggle && nav) {
-    toggle.addEventListener('click', function () {
-      var open = nav.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
-  }
-
   // Forms: open the visitor's email app with the answers filled in
   var forms = document.querySelectorAll('form[data-subject]');
   forms.forEach(function (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-      var message = form.querySelector('.form-message');
+      var message = form.querySelector('.msg');
       if (!form.checkValidity()) {
         message.textContent = 'Please fill in the required fields.';
-        message.className = 'form-message show error';
+        message.className = 'msg show';
         form.reportValidity();
         return;
       }
@@ -39,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
       var subject = form.getAttribute('data-subject') + (name ? ' from ' + name : '');
       window.location.href = 'mailto:' + EMAIL + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(lines.join('\n'));
       message.innerHTML = 'Your email app should open with the message filled in. If it does not, please email us at <a href="mailto:' + EMAIL + '">' + EMAIL + '</a>.';
-      message.className = 'form-message show';
+      message.className = 'msg show';
     });
   });
 

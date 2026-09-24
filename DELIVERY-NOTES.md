@@ -1,5 +1,8 @@
 # Future Spark website — delivery notes
 
+**Update, 24 September 2026 (later).** The site was rebuilt at the team's request as a four-page site modeled on the layout of mindrobotics.com (small mark top-left with two pill buttons, staggered wordmark hero with an illustration bleeding off the right, pill-highlighted statement headlines, full-width photos between sections, cream blob shapes, pill-shaped calls to action, one-line footer), using the team's own photos and no placeholders. Every fact on the site is one the team confirmed; the two unconfirmed activity names were left out rather than guessed. The research, grant-reviewer checklist, citations, fiscal-sponsorship notes and "what to send next" below still apply; the section-by-section audit and placeholder inventory describe the earlier single-page build and are kept for reference.
+
+
 Built 24 September 2026. Files: `future-spark.html`, `future-spark-one-pager.pdf`, logo SVGs, `screenshots/`. Everything below is in the order the brief asked for.
 
 **One caveat up front.** The sandbox this was built in blocks outbound web access to everything except Google Fonts, web search, and the npm registry. Every reference site, funder page, and study cited below was read through search-result extracts, not opened in a browser. Facts are quoted from those extracts and tied to their URL, and anything I could not see in an extract is marked **not verified**. Before the site goes live, someone with a normal browser should click each citation in the "Why" section once. That is a ten-minute job. If you want the reference-site audit re-run properly (fonts inspected, screenshots taken), open the environment's network access and rerun it; the audit script is ready.

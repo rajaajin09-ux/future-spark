@@ -3,175 +3,129 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Get Involved | Future Spark</title>
+<title>Get involved | Future Spark</title>
 <meta name="description" content="Request free STEM kits for your school, sponsor a kit for $25, or volunteer with Future Spark in Columbus, Ohio.">
 <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Get Involved | Future Spark">
+<meta property="og:title" content="Get involved | Future Spark">
 <meta property="og:description" content="Request free STEM kits for your school, sponsor a kit for $25, or volunteer with Future Spark in Columbus, Ohio.">
 <meta property="og:image" content="images/box-of-kits-wide.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
 </head>
-<body class="page-get-involved">
-<header class="site-header">
-  <div class="container">
-    <a class="logo" href="index.html"><img src="images/mark.svg" alt="">Future Spark</a>
-    <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mainNav"><span></span><span></span><span></span></button>
-    <nav class="main-nav" id="mainNav" aria-label="Main menu">
-      <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="how-it-works.html">How It Works</a></li>
-      <li><a href="impact.html">Impact</a></li>
-      <li><a href="get-involved.html" class="active">Get Involved</a></li>
-      <li><a href="for-funders.html">For Funders</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a class="btn btn-orange" href="get-involved.html#sponsor">Sponsor a Kit</a></li>
-      </ul>
-    </nav>
+<body>
+<header>
+  <div class="wrap">
+    <a class="mark" href="index.html" aria-label="Future Spark home"><img src="images/mark.svg" alt=""></a>
+    <div class="actions">
+      <a class="btn btn-navy" href="get-involved.html#request">Request kits</a>
+      <a class="btn btn-blue" href="get-involved.html#sponsor">Sponsor a kit</a>
+    </div>
   </div>
 </header>
 
-<section class="page-hero">
-  <div class="container"><h1>Get Involved</h1><p>Request kits, sponsor a kit, or volunteer with our team</p></div>
+<section class="page-title">
+  <div class="wrap">
+    <h1>Get <span class="pill blue">involved</span></h1>
+    <p>Request kits for your students, sponsor a kit, or volunteer with our team. Each form opens an email to us with your answers filled in, or write to <a href="mailto:futuresparks0@gmail.com">futuresparks0@gmail.com</a>.</p>
+  </div>
 </section>
 
-<section class="section" id="request">
-  <div class="container">
-    <div class="cols-2" style="align-items: start">
-      <div>
-        <h2>Request Kits for Your Students</h2>
-        <p>For elementary schools, shelters, after-school programs, and community organizations in Central Ohio. Tell us how many students you serve and we will bring the kits. There is no cost.</p>
-        <p>You can also email us directly at <a href="mailto:futuresparks0@gmail.com">futuresparks0@gmail.com</a>.</p>
-        <img class="photo photo-wide" src="images/box-of-kits-wide.jpg" alt="A box of finished kits ready for delivery" style="margin-top: 20px">
+<section class="tight" id="request">
+  <div class="wrap split" style="align-items: start">
+    <div>
+      <h2>Request kits for your <span class="pill yellow">students</span></h2>
+      <p>For elementary schools, shelters, after-school programs, and community organizations in Central Ohio. Tell us how many students you serve and the grade level. We build the kits and deliver them in person. There is no cost.</p>
+      <img src="images/box-of-kits-wide.jpg" alt="A box of finished kits ready for delivery">
+    </div>
+    <form class="panel" id="requestForm" data-subject="Kit request">
+      <div class="field"><label for="r-org">School or organization</label><input type="text" id="r-org" name="Organization" required></div>
+      <div class="two-col">
+        <div class="field"><label for="r-name">Your name</label><input type="text" id="r-name" name="Name" required></div>
+        <div class="field"><label for="r-role">Your role</label><input type="text" id="r-role" name="Role" placeholder="Teacher, principal, director" required></div>
       </div>
-      <div class="card">
-        <form id="requestForm" data-subject="Kit request">
-          <div class="form-group"><label for="r-org">School or organization name <span class="required">*</span></label><input type="text" id="r-org" name="Organization" required></div>
-          <div class="form-row">
-            <div class="form-group"><label for="r-name">Your name <span class="required">*</span></label><input type="text" id="r-name" name="Name" required></div>
-            <div class="form-group"><label for="r-role">Your role <span class="required">*</span></label><input type="text" id="r-role" name="Role" placeholder="Teacher, principal, director" required></div>
-          </div>
-          <div class="form-group"><label for="r-email">Email <span class="required">*</span></label><input type="email" id="r-email" name="Email" required></div>
-          <div class="form-row">
-            <div class="form-group"><label for="r-students">Number of students <span class="required">*</span></label><input type="number" id="r-students" name="Number of students" min="1" required></div>
-            <div class="form-group"><label for="r-grade">Grade band <span class="required">*</span></label>
-              <select id="r-grade" name="Grade band" required><option value="">Select</option><option>K–2</option><option>3–5</option><option>Mixed elementary</option><option>Other</option></select></div>
-          </div>
-          <div class="form-group"><label for="r-address">Delivery address <span class="required">*</span></label><input type="text" id="r-address" name="Address" required></div>
-          <div class="form-group"><label for="r-message">Message</label><textarea id="r-message" name="Message" placeholder="When you would like the kits, questions, anything else"></textarea></div>
-          <button class="btn btn-orange" type="submit">Send Request</button>
-          <p class="form-note">Submitting opens an email to us with your answers filled in.</p>
-          <div class="form-message" role="status"></div>
-        </form>
+      <div class="field"><label for="r-email">Email</label><input type="email" id="r-email" name="Email" required></div>
+      <div class="two-col">
+        <div class="field"><label for="r-students">Number of students</label><input type="number" id="r-students" name="Number of students" min="1" required></div>
+        <div class="field"><label for="r-grade">Grade band</label><select id="r-grade" name="Grade band" required><option value="">Select</option><option>K–2</option><option>3–5</option><option>Mixed elementary</option><option>Other</option></select></div>
+      </div>
+      <div class="field"><label for="r-address">Delivery address</label><input type="text" id="r-address" name="Address" required></div>
+      <div class="field"><label for="r-message">Anything else</label><textarea id="r-message" name="Message" placeholder="When you'd like the kits, questions"></textarea></div>
+      <button class="btn btn-navy" type="submit">Send request</button>
+      <div class="msg" role="status"></div>
+    </form>
+  </div>
+</section>
+
+<section class="tight" id="sponsor">
+  <div class="wrap split" style="align-items: start">
+    <div>
+      <h2>Sponsor a <span class="pill pink">kit</span></h2>
+      <p>Every dollar goes toward kit materials. Our students donate their time to design, build, and deliver the kits.</p>
+      <table>
+        <thead><tr><th>Gift</th><th>What it makes</th></tr></thead>
+        <tbody>
+          <tr><td><strong>$25</strong></td><td>1 kit for 1 student</td></tr>
+          <tr><td><strong>$250</strong></td><td>10 kits, a classroom group</td></tr>
+          <tr><td><strong>$1,000</strong></td><td>40 kits</td></tr>
+          <tr><td><strong>$2,500</strong></td><td>100 kits, about one school</td></tr>
+        </tbody>
+      </table>
+      <p style="margin-top: 18px">Thinking about a larger gift or a grant? See our <a href="for-funders.html">information for funders</a>.</p>
+    </div>
+    <div class="panel">
+      <h2>Choose an amount</h2>
+      <div class="amounts" id="amounts">
+        <button type="button" class="amount selected" data-amount="25">$25</button>
+        <button type="button" class="amount" data-amount="250">$250</button>
+        <button type="button" class="amount" data-amount="1000">$1,000</button>
+        <button type="button" class="amount" data-amount="custom">Other</button>
+      </div>
+      <div class="field" id="customAmount" style="display:none"><label for="s-custom">Amount ($)</label><input type="number" id="s-custom" min="1" placeholder="25"></div>
+      <div class="zelle">
+        <strong>Send by Zelle to</strong>
+        <span class="num">614-849-6939</span>
+        <p class="small">Put <strong>"Future Spark kits"</strong> and your email in the memo so we can thank you and tell you where the kits went.</p>
+        <p class="small" style="margin:0">Your gift of <strong id="giftAmount">$25</strong> makes <strong id="giftKits">1 kit</strong>.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section section-gray" id="sponsor">
-  <div class="container">
-    <div class="cols-2" style="align-items: start">
-      <div>
-        <h2>Sponsor a Kit</h2>
-        <p>Every dollar goes toward kit materials. Our students donate their time to design, build, and deliver the kits.</p>
-        <table class="table">
-          <thead><tr><th>Gift</th><th>What it makes</th></tr></thead>
-          <tbody>
-            <tr><td data-label="Gift"><strong>$25</strong></td><td data-label="What it makes">1 kit for 1 student</td></tr>
-            <tr><td data-label="Gift"><strong>$250</strong></td><td data-label="What it makes">10 kits, a classroom group</td></tr>
-            <tr><td data-label="Gift"><strong>$1,000</strong></td><td data-label="What it makes">40 kits</td></tr>
-            <tr><td data-label="Gift"><strong>$2,500</strong></td><td data-label="What it makes">100 kits, about one school</td></tr>
-          </tbody>
-        </table>
-        <p style="margin-top: 16px">Interested in sponsoring a whole school, or want more detail before you give? See our <a href="for-funders.html">information for funders</a> or email <a href="mailto:futuresparks0@gmail.com">futuresparks0@gmail.com</a>.</p>
-      </div>
-      <div class="card">
-        <h3>Choose an amount</h3>
-        <div class="amounts" id="amounts">
-          <button type="button" class="amount selected" data-amount="25">$25<small>1 kit</small></button>
-          <button type="button" class="amount" data-amount="250">$250<small>10 kits</small></button>
-          <button type="button" class="amount" data-amount="1000">$1,000<small>40 kits</small></button>
-          <button type="button" class="amount" data-amount="custom">Other<small>any amount</small></button>
-        </div>
-        <div class="form-group" id="customAmount" style="display:none"><label for="s-custom">Amount ($)</label><input type="number" id="s-custom" min="1" placeholder="25"></div>
-        <div class="zelle-box">
-          <p style="margin:0"><strong>Send your gift by Zelle to:</strong></p>
-          <div class="zelle-number">614-849-6939</div>
-          <p>Please put <strong>"Future Spark kits"</strong> and your email address in the memo so we can thank you and let you know where your kits went.</p>
-          <p style="margin:0">Your gift of <strong id="giftAmount">$25</strong> makes <strong id="giftKits">1 kit</strong>.</p>
-        </div>
-      </div>
+<section class="tight" id="volunteer" style="padding-bottom: 110px">
+  <div class="wrap split" style="align-items: start">
+    <div>
+      <h2><span class="pill soft-blue">Volunteer</span> with us</h2>
+      <p>We build kits on evenings and weekends and deliver them around Central Ohio. Help build, deliver, write instructions, or take photos. Students and adults are welcome, for an afternoon or a semester.</p>
+      <img src="images/build-night-wide.jpg" alt="Students packing kits on a build night">
     </div>
+    <form class="panel" id="volunteerForm" data-subject="Volunteer">
+      <div class="field"><label for="v-name">Name</label><input type="text" id="v-name" name="Name" required></div>
+      <div class="field"><label for="v-email">Email</label><input type="email" id="v-email" name="Email" required></div>
+      <div class="field"><label for="v-school">School or affiliation</label><input type="text" id="v-school" name="School or affiliation"></div>
+      <div class="field"><label for="v-help">How would you like to help?</label><select id="v-help" name="How you want to help" required><option value="">Select</option><option>Build kits</option><option>Deliver kits</option><option>Write or test instructions</option><option>Photography</option><option>Something else</option></select></div>
+      <div class="field"><label for="v-avail">Availability</label><input type="text" id="v-avail" name="Availability" placeholder="Weekday evenings, one Saturday a month"></div>
+      <button class="btn btn-navy" type="submit">Send</button>
+      <div class="msg" role="status"></div>
+    </form>
   </div>
 </section>
-
-<section class="section" id="volunteer">
-  <div class="container">
-    <div class="cols-2" style="align-items: start">
-      <div>
-        <h2>Volunteer</h2>
-        <p>We build kits on evenings and weekends and deliver them around Central Ohio. If you would like to help build, deliver, write instructions, or take photos, let us know. Students and adults are welcome, for an afternoon or a whole semester.</p>
-        <img class="photo photo-wide" src="images/build-night-wide.jpg" alt="Students packing kits on a build night" style="margin-top: 20px">
-      </div>
-      <div class="card">
-        <form id="volunteerForm" data-subject="Volunteer">
-          <div class="form-group"><label for="v-name">Name <span class="required">*</span></label><input type="text" id="v-name" name="Name" required></div>
-          <div class="form-group"><label for="v-email">Email <span class="required">*</span></label><input type="email" id="v-email" name="Email" required></div>
-          <div class="form-group"><label for="v-school">School or affiliation</label><input type="text" id="v-school" name="School or affiliation"></div>
-          <div class="form-group"><label for="v-help">How would you like to help? <span class="required">*</span></label>
-            <select id="v-help" name="How you want to help" required><option value="">Select</option><option>Build kits</option><option>Deliver kits</option><option>Write or test instructions</option><option>Photography</option><option>Something else</option></select></div>
-          <div class="form-group"><label for="v-avail">Availability</label><input type="text" id="v-avail" name="Availability" placeholder="Weekday evenings, one Saturday a month"></div>
-          <button class="btn btn-orange" type="submit">Send</button>
-          <p class="form-note">Submitting opens an email to us with your answers filled in.</p>
-          <div class="form-message" role="status"></div>
-        </form>
-      </div>
+<footer>
+  <div class="wrap">
+    <div class="left">
+      <a class="mark" href="index.html" aria-label="Future Spark home"><img src="images/mark.svg" alt=""></a>
+      <span>Columbus, OH</span>
+      <a href="mailto:futuresparks0@gmail.com">futuresparks0@gmail.com</a>
+      <a href="https://www.instagram.com/ohs_future_engineers" target="_blank" rel="noopener">Instagram</a>
     </div>
-  </div>
-</section>
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-cols">
-      <div>
-        <a class="logo" href="index.html"><img src="images/logo-white.svg" alt="Future Spark"></a>
-        <p>A student-led initiative in Columbus, Ohio. We build free hands-on STEM kits and deliver them to elementary schools, shelters, and community organizations in Central Ohio.</p>
-        <p><a href="mailto:futuresparks0@gmail.com">futuresparks0@gmail.com</a></p>
-      </div>
-      <div>
-        <h4>About</h4>
-        <ul>
-          <li><a href="about.html">Our Story</a></li>
-          <li><a href="how-it-works.html">How It Works</a></li>
-          <li><a href="impact.html">Our Impact</a></li>
-          <li><a href="press.html">Press Kit</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Get Involved</h4>
-        <ul>
-          <li><a href="get-involved.html#request">Request Kits</a></li>
-          <li><a href="get-involved.html#sponsor">Sponsor a Kit</a></li>
-          <li><a href="get-involved.html#volunteer">Volunteer</a></li>
-          <li><a href="for-funders.html">For Funders</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Contact</h4>
-        <ul>
-          <li><a href="mailto:futuresparks0@gmail.com">Email us</a></li>
-          <li><a href="https://www.instagram.com/ohs_future_engineers" target="_blank" rel="noopener">Instagram</a></li>
-          <li>Columbus, Ohio</li>
-        </ul>
-      </div>
+    <div>
+      <a href="for-funders.html">For funders</a> &nbsp;&middot;&nbsp;
+      <a href="contact.html">Contact</a> &nbsp;&middot;&nbsp;
+      <span>&copy; <span id="year">2026</span> Future Spark</span>
     </div>
-    <div class="footer-bottom">
-      <p>Future Spark is a student-led initiative based in Columbus, Ohio. We are not yet a registered charitable organization. Sponsorships go directly toward kit materials.</p>
-      <p>&copy; <span id="year">2026</span> Future Spark (formerly Future Engineers). All rights reserved.</p>
-    </div>
+    <p class="legal">Future Spark is a student-led initiative based in Columbus, Ohio, formerly Future Engineers. We are not yet a registered charitable organization. Sponsorships go directly toward kit materials.</p>
   </div>
 </footer>
 <script src="js/main.js"></script>

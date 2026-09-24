@@ -50,7 +50,6 @@ body {
   color: var(--black);
   background: var(--grey-50);
   -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
 }
 h1, h2, h3 { margin: 0; font-weight: 700; color: var(--black); }
 p { margin: 0 0 1em; }
@@ -98,32 +97,66 @@ section { position: relative; }
 .btn + .btn { margin-left: 8px; }
 
 /* Header */
-header { position: fixed; inset: 0 0 auto; z-index: 20; padding: 24px var(--gutter); display: flex; justify-content: space-between; align-items: center; pointer-events: none; }
+header { position: fixed; inset: 0 0 auto; z-index: 20; padding: 24px var(--gutter); display: flex; justify-content: space-between; align-items: center; gap: 16px; pointer-events: none; }
 header > * { pointer-events: auto; }
+.tabs { display: flex; gap: 4px; background: rgba(255,255,255,0.85); backdrop-filter: blur(8px); border-radius: 999px; padding: 4px; }
+.tabs a { display: inline-flex; align-items: center; height: 34px; padding: 0 16px; border-radius: 999px; font-weight: 700; font-size: 15px; text-decoration: none; color: var(--black); white-space: nowrap; transition: background 0.2s, color 0.2s; }
+.tabs a:hover { background: var(--grey-50); }
+.tabs a[aria-current="page"] { background: var(--black); color: var(--white); }
+@media (max-width: 833px) {
+  header { flex-wrap: wrap; padding: 16px var(--gutter); row-gap: 10px; }
+  .tabs { order: 3; width: 100%; justify-content: space-between; overflow-x: auto; }
+  .tabs a { height: 32px; padding: 0 12px; font-size: 14px; flex: 1; justify-content: center; }
+  .mark { width: 44px; height: 44px; }
+}
 .mark { display: block; width: 64px; height: 64px; }
 .mark img { width: 100%; height: 100%; }
 .actions { display: flex; gap: 8px; }
 @media (min-width: 834px) { header { padding: 32px var(--gutter); } }
 
-/* Hero */
-.hero { padding: var(--spacer-xl) var(--gutter) 0; min-height: 100svh; display: flex; flex-direction: column; gap: 9vw; position: relative; overflow: hidden; }
-.wordmark { position: relative; z-index: 1; font-family: var(--font-mark); font-weight: 900; font-size: clamp(56px, 12.4vw, 186px); line-height: 0.9; letter-spacing: -0.01em; color: var(--black); }
+/* Hero: a tall track with a pinned frame; the arm lowers as you scroll through it */
+.hero-track { height: 320vh; position: relative; }
+.hero-pin { position: sticky; top: 0; height: 100vh; overflow: hidden; padding: var(--spacer-xl) var(--gutter) 0; display: flex; flex-direction: column; gap: 9vw; }
+.wordmark { position: relative; z-index: 1; font-family: var(--font-mark); font-weight: 900; font-size: clamp(56px, 12.4vw, 186px); line-height: 0.9; letter-spacing: -0.01em; color: var(--black); transform: translateY(calc(var(--p, 0) * -6vh)) scale(calc(1 - var(--p, 0) * 0.06)); transform-origin: left top; }
 .wordmark span { display: block; }
-.hero-art { position: absolute; right: 2%; top: 9%; width: 30%; max-width: 440px; z-index: 2; pointer-events: none; }
+.wordmark .ch { display: inline-block; opacity: 0; transform: translateY(0.6em) rotate(6deg); animation: rise 0.9s cubic-bezier(.14, 1, .34, 1) forwards; animation-delay: calc(var(--i) * 55ms + 150ms); }
+.wordmark .line2 .ch { animation-delay: calc(var(--i) * 55ms + 420ms); }
+.wordmark.lit .line2 .ch { color: var(--teal); animation: lit 0.5s cubic-bezier(.14, 1, .34, 1) forwards; animation-delay: calc(var(--i) * 40ms); }
+@keyframes rise { to { opacity: 1; transform: none; } }
+@keyframes lit { 0% { transform: translateY(0); } 40% { transform: translateY(-0.08em); } 100% { transform: none; opacity: 1; } }
 .shapes { display: flex; justify-content: space-between; margin-top: -6vw; position: relative; }
-.shapes span { width: 32%; background: var(--white); border-radius: 999px; }
+.shapes span { width: 32%; background: var(--white); border-radius: 999px; opacity: 0; animation: rise 1.1s cubic-bezier(.14, 1, .34, 1) forwards; }
 .shapes .pill { aspect-ratio: 2 / 5; }
-.shapes .ball { aspect-ratio: 1; align-self: flex-start; margin-top: 9.6%; transform: translateY(40%); }
-.shapes .pill.first { transform: translateY(-22%); }
+.shapes .pill.first { transform: translateY(-22%); animation-delay: 0.7s; --ty: -22%; }
+.shapes .ball { aspect-ratio: 1; align-self: flex-start; margin-top: 9.6%; animation-delay: 0.85s; --ty: 40%; }
+.shapes .pill:last-child { animation-delay: 1s; --ty: 0%; }
+.shapes span { animation-name: rise-shape; }
+@keyframes rise-shape { from { opacity: 0; transform: translateY(calc(var(--ty) + 12vh)); } to { opacity: 1; transform: translateY(var(--ty)); } }
+.arm-wrap { position: absolute; right: 4%; top: 0; width: 24%; max-width: 360px; z-index: 3; pointer-events: none; transform: translateY(var(--arm-y, -110%)); will-change: transform; }
+.arm-obj { width: 100%; height: auto; aspect-ratio: 400 / 980; display: block; }
+.kit-wrap { position: absolute; right: 6%; bottom: 8vh; width: 20%; max-width: 300px; z-index: 2; pointer-events: none; }
+.kit-wrap .hero-art { width: 100%; transform: translateY(calc((1 - var(--p, 0)) * 6vh)); }
+.spark-burst { position: absolute; right: -10%; top: -14%; width: 40%; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle, var(--yellow) 0 30%, transparent 32% 44%, var(--yellow) 45% 50%, transparent 52%); opacity: 0; transform: scale(0.3); }
+.kit-wrap.lit .spark-burst { animation: burst 0.7s cubic-bezier(.14, 1, .34, 1) forwards; }
+@keyframes burst { 0% { opacity: 0; transform: scale(0.3); } 40% { opacity: 1; } 100% { opacity: 0; transform: scale(1.8); } }
+.scroll-hint { position: absolute; left: 50%; bottom: 24px; transform: translateX(-50%); font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; opacity: calc(0.6 - var(--p, 0) * 2); animation: nudge 1.6s ease-in-out infinite; }
+@keyframes nudge { 50% { transform: translate(-50%, 6px); } }
 @media (min-width: 834px) {
-  .hero { gap: 4.5vw; }
-  .wordmark span + span { margin-left: 0.85em; }
+  .hero-pin { gap: 4.5vw; }
+  .wordmark > span + span { margin-left: 0.85em; }
   .shapes { margin-top: -10vw; }
 }
-@media (max-width: 833px) { .hero-art { display: none; } .shapes { margin-top: 24px; } }
+@media (max-width: 833px) {
+  .hero-track { height: 240vh; }
+  .hero-pin { padding-top: 170px; }
+  .wordmark { transform: translateY(calc(var(--p, 0) * -2vh)); }
+  .arm-wrap { width: 42%; right: 2%; }
+  .kit-wrap { width: 34%; right: 4%; bottom: 6vh; }
+  .shapes { margin-top: 24px; }
+}
 
 /* Statement */
-.statement { padding-top: var(--spacer-large); padding-bottom: var(--spacer-small); row-gap: 32px; }
+.statement { padding-top: var(--spacer-medium); padding-bottom: var(--spacer-small); row-gap: 32px; }
 .statement .h-statement { grid-column: 1 / -1; }
 .statement .body { grid-column: 1 / -1; max-width: 600px; }
 @media (min-width: 834px) {
@@ -169,6 +202,20 @@ header > * { pointer-events: auto; }
   .feature .media { grid-column: 7 / span 6; }
 }
 @media (min-width: 1200px) { .feature .text { grid-column: 1 / span 5; } }
+
+/* Kid building a kit: animated illustration */
+.build { padding-block: var(--spacer-medium); row-gap: 40px; align-items: center; }
+.build .text { grid-column: 1 / -1; }
+.build .scene { grid-column: 1 / -1; background: var(--white); border-radius: var(--radius-medium); padding: 24px; }
+.build .scene svg { width: 100%; height: auto; display: block; }
+.build .body { margin-top: 32px; max-width: 520px; }
+.build .steps { margin-top: 24px; display: grid; gap: 10px; }
+.build .steps li { display: flex; gap: 12px; align-items: baseline; font-size: 16px; }
+.build .steps b { flex: none; width: 28px; height: 28px; border-radius: 50%; background: var(--yellow); display: inline-flex; align-items: center; justify-content: center; font-size: 14px; }
+@media (min-width: 834px) { .build .text { grid-column: 1 / span 5; } .build .scene { grid-column: 7 / span 6; } }
+.page .scene-mini { grid-column: 1 / -1; max-width: 420px; background: var(--white); border-radius: var(--radius-small); padding: 12px; }
+.page .scene-mini svg { width: 100%; height: auto; display: block; }
+@media (min-width: 834px) { .page .scene-mini { grid-column: 8 / span 5; grid-row: 1 / span 2; } }
 
 /* Cards section on the darker grey */
 .cards { background: var(--grey-100); padding-block: var(--spacer-medium); border-top: 1px solid rgba(6,26,30,0.08); }
@@ -223,8 +270,34 @@ footer { padding: 0 var(--gutter) 24px; }
 .legal { font-size: 12px; opacity: 0.6; padding: 12px 24px 0; }
 @media (max-width: 833px) { .footbar { border-radius: var(--radius-small); } }
 
+/* Scroll reveals */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.8s cubic-bezier(.14, 1, .34, 1), transform 0.8s cubic-bezier(.14, 1, .34, 1); transition-delay: calc(var(--i, 0) * 120ms); }
+.reveal.in { opacity: 1; transform: none; }
+.card.reveal { transition-delay: calc(var(--i, 0) * 90ms); }
+/* Headline words fan in one at a time; tag pills wipe open */
+.words .w, .words .tag { opacity: 0; transform: translateY(0.35em); transition: opacity 0.6s cubic-bezier(.14, 1, .34, 1), transform 0.6s cubic-bezier(.14, 1, .34, 1), clip-path 0.6s cubic-bezier(.14, 1, .34, 1); transition-delay: calc(var(--i, 0) * 90ms); }
+.words .tag { clip-path: inset(0 100% 0 0 round 999px); }
+.words.in .w, .words.in .tag { opacity: 1; transform: none; clip-path: inset(0 0 0 0 round 999px); }
+.words .w { display: inline-block; }
+.fan > span { opacity: 0; transform: translateX(-24px); transition: opacity 0.7s cubic-bezier(.14, 1, .34, 1), transform 0.7s cubic-bezier(.14, 1, .34, 1); }
+.fan > span:nth-child(2) { transition-delay: 120ms; }
+.fan > span:nth-child(3) { transition-delay: 240ms; }
+.fan.in > span { opacity: 1; transform: none; }
+.fan .dot { transform: scale(0); transition: transform 0.5s cubic-bezier(.14, 1, .34, 1) 300ms; }
+.fan.in .dot { transform: scale(1); }
+.progress .fill { width: 0; transition: width 1.4s cubic-bezier(.14, 1, .34, 1) 200ms; }
+.band .frame img { will-change: transform; transform: translateY(calc(var(--py, 0) * 1px)) scale(1.06); }
+.giant .g-shapes span { transform: translateY(calc(var(--py, 0) * var(--k, 1) * 1px)); }
+.giant .g-shapes .p1 { --k: -0.5; } .giant .g-shapes .b1 { --k: 0.35; } .giant .g-shapes .p2 { --k: -0.25; }
+@media (prefers-reduced-motion: reduce) {
+  .wordmark .ch, .shapes span, .scroll-hint, .kit-wrap.lit .spark-burst { animation: none; opacity: 1; transform: none; }
+  .wordmark, .arm-wrap, .kit-wrap .hero-art, .band .frame img, .giant .g-shapes span { transform: none !important; }
+  .reveal, .words .w, .words .tag, .fan > span, .fan .dot { opacity: 1; transform: none; clip-path: none; transition: none; }
+  .progress .fill { transition: none; }
+}
+
 /* Inner pages */
-.page { padding-top: calc(var(--spacer-xl) - 40px); padding-bottom: var(--spacer-small); row-gap: 24px; }
+.page { padding-top: calc(var(--spacer-xl) - 20px); padding-bottom: var(--spacer-small); row-gap: 24px; }
 .page .h-statement { grid-column: 1 / -1; }
 .page .intro { grid-column: 1 / -1; max-width: 640px; }
 @media (min-width: 834px) { .page .h-statement, .page .intro { grid-column: 2 / span 10; } }
@@ -288,6 +361,12 @@ td li { margin-bottom: 4px; }
 <body>
 <header>
   <a class="mark" href="index.html" aria-label="Future Spark home"><img src="images/mark.svg" alt=""></a>
+  <nav class="tabs" aria-label="Pages">
+    <a href="index.html">Home</a>
+    <a href="get-involved.html">Get involved</a>
+    <a href="for-funders.html">For funders</a>
+    <a href="contact.html" aria-current="page">Contact</a>
+  </nav>
   <div class="actions">
     <a class="btn" href="get-involved.html#request">Request kits</a>
     <a class="btn" href="get-involved.html#sponsor">Sponsor a kit</a>
@@ -312,7 +391,7 @@ td li { margin-bottom: 4px; }
     <p class="p-small">Future Spark is a student-led initiative in Columbus, Ohio, that designs, hand-assembles, and delivers free hands-on STEM kits to under-resourced elementary schools, shelters, and community organizations in Central Ohio. Started by high school student Satvik Surapaneni as a class service project, the team has delivered 300 kits to three elementary schools and three community organizations at no cost to students, and is working toward 1,000 kits across Ohio.</p>
     <p class="p-small">Logos: <a href="images/logo.svg" download>color</a> &middot; <a href="images/logo-white.svg" download>white</a>. Photos on this site may be used with the credit "Photo: Future Spark."</p>
   </div>
-  <form class="panel" id="contactForm" data-subject="Website message">
+  <form class="panel reveal" id="contactForm" data-subject="Website message">
     <div class="field"><label for="c-name">Name</label><input type="text" id="c-name" name="Name" required></div>
     <div class="field"><label for="c-email">Email</label><input type="email" id="c-email" name="Email" required></div>
     <div class="field"><label for="c-type">I am a</label><select id="c-type" name="I am a"><option>Teacher or school staff</option><option>Community organization</option><option>Sponsor or funder</option><option>Parent</option><option>Student</option><option>Reporter</option><option>Other</option></select></div>
@@ -430,6 +509,111 @@ document.addEventListener('DOMContentLoaded', function () {
     dots.forEach(function (d, k) { d.addEventListener('click', function () { clearInterval(timer); show(k); }); });
     timer = setInterval(function () { show(i + 1); }, 5000);
   });
+});
+
+// Animations: hero arm on scroll, wordmark letters, headline word fans, reveals, counters, parallax
+document.addEventListener('DOMContentLoaded', function () {
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Split the wordmark into letters so they can rise in one at a time
+  var wordmark = document.querySelector('.wordmark');
+  if (wordmark && !reduce) {
+    var n = 0;
+    wordmark.querySelectorAll('span').forEach(function (line, li) {
+      if (li === 1) line.classList.add('line2');
+      var text = line.textContent; line.textContent = '';
+      text.split('').forEach(function (ch) {
+        var s = document.createElement('span'); s.className = 'ch'; s.textContent = ch; s.style.setProperty('--i', n++); line.appendChild(s);
+      });
+    });
+  }
+
+  // Wrap the plain words of fan-in headlines (tags stay whole)
+  document.querySelectorAll('.words').forEach(function (h) {
+    var i = 0;
+    Array.prototype.slice.call(h.childNodes).forEach(function (node) {
+      if (node.nodeType === 3) {
+        var frag = document.createDocumentFragment();
+        node.textContent.split(/(\s+)/).forEach(function (part) {
+          if (!part) return;
+          if (/^\s+$/.test(part)) { frag.appendChild(document.createTextNode(part)); return; }
+          var w = document.createElement('span'); w.className = 'w'; w.textContent = part; w.style.setProperty('--i', i++); frag.appendChild(w);
+        });
+        h.replaceChild(frag, node);
+      } else if (node.nodeType === 1) { node.style.setProperty('--i', i++); }
+    });
+  });
+
+  // Stagger index for card rows
+  document.querySelectorAll('.card-row .card').forEach(function (c, i) { c.style.setProperty('--i', i); });
+
+  // Count-up numbers
+  function countUp(el) {
+    var target = Number(el.getAttribute('data-count')), start = null, dur = 1200;
+    function tick(ts) { if (!start) start = ts; var p = Math.min((ts - start) / dur, 1); var e = 1 - Math.pow(1 - p, 3); el.textContent = Math.round(target * e).toLocaleString('en-US'); if (p < 1) requestAnimationFrame(tick); }
+    requestAnimationFrame(tick);
+  }
+
+  if (reduce || !('IntersectionObserver' in window)) {
+    document.querySelectorAll('[data-count]').forEach(function (el) { el.textContent = Number(el.getAttribute('data-count')).toLocaleString('en-US'); });
+    document.querySelectorAll('.progress .fill').forEach(function (f) { f.style.width = f.getAttribute('data-width'); });
+    document.querySelectorAll('.reveal, .words, .fan').forEach(function (el) { el.classList.add('in'); });
+    return;
+  }
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) {
+      if (!en.isIntersecting) return;
+      var el = en.target; el.classList.add('in'); io.unobserve(el);
+      el.querySelectorAll('[data-count]').forEach(countUp);
+      if (el.hasAttribute('data-count')) countUp(el);
+      el.querySelectorAll('.progress .fill').forEach(function (f) { f.style.width = f.getAttribute('data-width'); });
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
+  document.querySelectorAll('.reveal, .words, .fan, .numbers, .progress').forEach(function (el) { io.observe(el); });
+
+  // Hero: progress 0→1 across the track drives the arm, the fingers, the kit and the wordmark
+  var track = document.getElementById('hero');
+  var pin = track && track.querySelector('.hero-pin');
+  var armObj = track && track.querySelector('.arm-obj');
+  var kit = track && track.querySelector('.kit-wrap');
+  var armSvg = null;
+  if (armObj) armObj.addEventListener('load', function () { try { armSvg = armObj.contentDocument.querySelector('svg'); } catch (e) {} });
+  var bands = document.querySelectorAll('.band .frame img');
+  var giant = document.querySelector('.giant');
+  var lit = false;
+
+  var armWrap = track && track.querySelector('.arm-wrap');
+  function onScroll() {
+    var y = window.scrollY, vh = window.innerHeight;
+    if (track) {
+      var p = Math.max(0, Math.min(1, y / (track.offsetHeight - vh)));
+      pin.style.setProperty('--p', p);
+      // arm: fully above the frame at the top, fingers wrapped over the kit at the end
+      var armH = armWrap.offsetHeight, kitTop = kit.getBoundingClientRect().top - pin.getBoundingClientRect().top;
+      var startY = -armH - 20, endY = kitTop - armH + Math.min(armH * 0.16, 140);
+      var eased = p < 0.5 ? 2 * p * p : 1 - Math.pow(-2 * p + 2, 2) / 2;
+      armWrap.style.setProperty('--arm-y', (startY + (endY - startY) * eased).toFixed(1) + 'px');
+      // fingers open on the way down (0.35→0.75), then close on the kit (0.85→1)
+      var open = p < 0.75 ? Math.max(0, (p - 0.35) / 0.4) : Math.max(0, 1 - (p - 0.75) / 0.2);
+      if (armSvg) armSvg.style.setProperty('--open', open.toFixed(3));
+      if (p > 0.9 && !lit) { lit = true; kit.classList.add('lit'); wordmark && wordmark.classList.add('lit'); }
+      if (p < 0.6 && lit) { lit = false; kit.classList.remove('lit'); wordmark && wordmark.classList.remove('lit'); }
+    }
+    bands.forEach(function (img) {
+      var r = img.parentElement.getBoundingClientRect();
+      if (r.bottom < 0 || r.top > vh) return;
+      img.style.setProperty('--py', ((r.top + r.height / 2 - vh / 2) * -0.08).toFixed(1));
+    });
+    if (giant) {
+      var g = giant.getBoundingClientRect();
+      if (g.bottom > 0 && g.top < vh) giant.style.setProperty('--py', ((g.top - vh / 2) * 0.15).toFixed(1));
+    }
+  }
+  var ticking = false;
+  window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(function () { onScroll(); ticking = false; }); } }, { passive: true });
+  window.addEventListener('resize', onScroll);
+  onScroll();
 });
 
 </script>

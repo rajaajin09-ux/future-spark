@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 560" class="kid-scene" role="img" aria-label="Illustration of a kid at a table assembling a sail car from a Future Spark kit">
+  <style>
+    .kid-scene .ln { fill: #ffffff; stroke: #061a1e; stroke-width: 8; stroke-linejoin: round; stroke-linecap: round; }
+    .kid-scene .ink { fill: #061a1e; }
+    .kid-scene .blue { fill: #1f5fd6; }
+    .kid-scene .light { fill: #bcd6ff; }
+    .kid-scene .yellow { fill: #ffbd00; }
+    .kid-scene .skin { fill: #f2c9a6; stroke: #061a1e; stroke-width: 8; stroke-linejoin: round; stroke-linecap: round; }
+    .kid-scene .table { fill: #dbd7ca; stroke: #061a1e; stroke-width: 8; }
+    .kid-scene .anim { animation-duration: 9s; animation-iteration-count: infinite; animation-timing-function: cubic-bezier(.4, 0, .2, 1); transform-box: fill-box; transform-origin: center; }
+    .kid-scene .hand-r { animation-name: hand; }
+    .kid-scene .wheel-a { animation-name: wheelA; }
+    .kid-scene .wheel-b { animation-name: wheelB; }
+    .kid-scene .sail { animation-name: sail; transform-origin: 50% 100%; }
+    .kid-scene .car { animation-name: car; }
+    .kid-scene .head { animation-name: head; transform-origin: 50% 100%; }
+    .kid-scene .spark { animation-name: spark; opacity: 0; }
+    @keyframes hand {
+      0% { transform: translate(0, 0); } 12% { transform: translate(-274px, -34px); } 22% { transform: translate(-274px, -34px); } 34% { transform: translate(-60px, -4px); }
+      46% { transform: translate(-224px, -34px); } 56% { transform: translate(-224px, -34px); } 68% { transform: translate(28px, -4px); }
+      80% { transform: translate(-14px, -120px); } 90% { transform: translate(-30px, -30px); } 100% { transform: translate(0, 0); }
+    }
+    @keyframes wheelA { 0%, 12% { transform: translate(0, 0); } 22% { transform: translate(0, -30px); } 34%, 100% { transform: translate(214px, 30px); } }
+    @keyframes wheelB { 0%, 46% { transform: translate(0, 0); } 56% { transform: translate(0, -30px); } 68%, 100% { transform: translate(252px, 30px); } }
+    @keyframes sail { 0%, 70% { transform: scaleY(0); } 82%, 100% { transform: scaleY(1); } }
+    @keyframes car { 0%, 84% { transform: translateX(0); } 94% { transform: translateX(70px); } 100% { transform: translateX(0); } }
+    @keyframes head { 0%, 30%, 64%, 100% { transform: rotate(0deg); } 12%, 46%, 80% { transform: rotate(-6deg); } 90% { transform: rotate(4deg); } }
+    @keyframes spark { 0%, 83% { opacity: 0; transform: scale(0.4); } 88% { opacity: 1; transform: scale(1.1); } 96%, 100% { opacity: 0; transform: scale(1.4); } }
+    @media (prefers-reduced-motion: reduce) { .kid-scene .anim { animation: none; } .kid-scene .sail { transform: none; } .kid-scene .wheel-a { transform: translate(214px, 30px); } .kid-scene .wheel-b { transform: translate(252px, 30px); } }
+  </style>
+  <!-- table -->
+  <rect class="table" x="40" y="380" width="720" height="26" rx="13"/>
+  <rect class="ink" x="90" y="406" width="16" height="130"/>
+  <rect class="ink" x="694" y="406" width="16" height="130"/>
+  <!-- kid: body behind table, head, left arm resting -->
+  <g class="kid">
+    <rect class="blue" x="520" y="250" width="190" height="150" rx="60" stroke="#061a1e" stroke-width="8"/>
+    <g class="head anim">
+      <circle class="skin" cx="615" cy="190" r="70"/>
+      <path class="ink" d="M545 175 C550 120 680 110 685 175 C660 150 600 150 545 175 Z"/>
+      <circle class="ink" cx="592" cy="196" r="6"/><circle class="ink" cx="638" cy="196" r="6"/>
+      <path d="M598 222 Q615 236 632 222" fill="none" stroke="#061a1e" stroke-width="6" stroke-linecap="round"/>
+    </g>
+    <path class="skin" d="M540 300 C500 320 470 350 460 380 L520 380 C525 355 540 335 560 320 Z"/>
+    <!-- right arm and hand, moves parts -->
+    <g class="hand-r anim">
+      <path class="skin" d="M560 300 C520 330 470 360 420 372 L430 396 C480 388 540 360 585 325 Z"/>
+      <circle class="skin" cx="424" cy="384" r="26"/>
+    </g>
+  </g>
+  <!-- open kit bag with parts -->
+  <g class="bag">
+    <rect class="ln" x="90" y="290" width="200" height="90" rx="20"/>
+    <rect class="yellow" x="80" y="300" width="220" height="16" rx="8"/>
+    <path class="ln" d="M110 290 L120 250 L260 250 L270 290" fill="#f6f4f0"/>
+    <!-- parts pile: wheels -->
+    <g class="wheel-a anim"><circle class="ink" cx="150" cy="350" r="18"/><circle class="light" cx="150" cy="350" r="7"/></g>
+    <g class="wheel-b anim"><circle class="ink" cx="200" cy="350" r="18"/><circle class="light" cx="200" cy="350" r="7"/></g>
+    <rect class="light" x="230" y="335" width="40" height="30" rx="6" stroke="#061a1e" stroke-width="6"/>
+  </g>
+  <!-- the sail car being built -->
+  <g class="car anim">
+    <rect class="ln" x="330" y="340" width="160" height="26" rx="10"/>
+    <rect class="ink" x="360" y="366" width="8" height="14"/><rect class="ink" x="448" y="366" width="8" height="14"/>
+    <g class="sail anim">
+      <rect class="ink" x="406" y="250" width="8" height="92"/>
+      <path class="yellow" d="M414 254 L470 330 L414 330 Z" stroke="#061a1e" stroke-width="6" stroke-linejoin="round"/>
+    </g>
+    <g class="spark anim">
+      <path class="blue" d="M470 214 C470 236 480 246 502 246 C480 246 470 256 470 278 C470 256 460 246 438 246 C460 246 470 236 470 214 Z"/>
+      <path class="yellow" d="M512 196 C512 206 516 210 526 210 C516 210 512 214 512 224 C512 214 508 210 498 210 C508 210 512 206 512 196 Z"/>
+    </g>
+  </g>
+</svg>

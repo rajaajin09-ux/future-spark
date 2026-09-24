@@ -73,3 +73,20 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 });
+
+// Photo band carousel: wipe between images, dots switch slides, auto-advance
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('[data-carousel]').forEach(function (slides) {
+    var imgs = slides.querySelectorAll('img');
+    var dots = slides.parentElement.querySelectorAll('.dots button');
+    if (imgs.length < 2) return;
+    var i = 0, timer;
+    function show(n) {
+      i = n % imgs.length;
+      imgs.forEach(function (im, k) { im.classList.toggle('active', k === i); });
+      dots.forEach(function (d, k) { d.setAttribute('aria-current', k === i ? 'true' : 'false'); });
+    }
+    dots.forEach(function (d, k) { d.addEventListener('click', function () { clearInterval(timer); show(k); }); });
+    timer = setInterval(function () { show(i + 1); }, 5000);
+  });
+});

@@ -12,85 +12,94 @@
 <meta property="og:image" content="images/box-of-kits-wide.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700&family=Nunito:wght@900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 <header>
-  <div class="wrap">
-    <a class="mark" href="index.html" aria-label="Future Spark home"><img src="images/mark.svg" alt=""></a>
-    <div class="actions">
-      <a class="btn btn-navy" href="get-involved.html#request">Request kits</a>
-      <a class="btn btn-blue" href="get-involved.html#sponsor">Sponsor a kit</a>
-    </div>
+  <a class="mark" href="index.html" aria-label="Future Spark home"><img src="images/mark.svg" alt=""></a>
+  <div class="actions">
+    <a class="btn" href="get-involved.html#request">Request kits</a>
+    <a class="btn" href="get-involved.html#sponsor">Sponsor a kit</a>
   </div>
 </header>
+<main>
 
 <section class="hero">
-  <div class="wrap">
-    <div class="hero-art"><img src="images/hero-kit.svg" alt=""></div>
-    <div class="dots"></div>
-    <h1 class="wordmark"><span>FUTURE</span><span>SPARK</span></h1>
-    <p class="hero-sub">Free, hand-built STEM kits for elementary schools in Central Ohio. Built by high school students.</p>
+  <img class="hero-art" src="images/hero-kit.svg" alt="">
+  <h1 class="wordmark" aria-label="Future Spark"><span>FUTURE</span><span>SPARK</span></h1>
+  <div class="shapes" aria-hidden="true"><span class="pill first"></span><span class="ball"></span><span class="pill"></span></div>
+</section>
+
+<section class="grid statement">
+  <h2 class="h-statement"><span class="tag teal">Future Spark</span> is building <span class="tag white">free</span> <span class="tag coral">hands-on</span> STEM kits so every kid gets to try engineering.</h2>
+  <div class="body p-large">
+    <p><strong>We're starting</strong> with the schools that get the least science. High school students in Columbus design each kit, buy the parts, pack every bag by hand, and deliver them in person to elementary schools, shelters, and community organizations across Central Ohio. It costs the school nothing.</p>
+    <p>Every kit holds two hands-on activities, all the materials, and step-by-step instructions a kid can follow alone. $25 covers the materials for one kit. Kids open the bag, build, and find out what they think.</p>
+    <ul class="numbers">
+      <li><strong>300</strong> kits delivered</li>
+      <li><strong>3</strong> elementary schools</li>
+      <li><strong>3</strong> community organizations</li>
+      <li><strong>$0</strong> to students</li>
+    </ul>
   </div>
 </section>
 
-<section class="statement">
-  <div class="blob a"></div><div class="blob b"></div><div class="blob c"></div>
-  <div class="wrap">
-    <h2><span class="pill blue">Future Spark</span> is building free STEM kits so every kid gets to <span class="pill pink">try</span> engineering before deciding it isn't for them.</h2>
-    <div class="two">
-      <p><strong>We're starting</strong> with the schools that get the least science. Our students design each kit, buy the parts, pack every bag by hand, and deliver them in person to elementary schools, shelters, and community organizations in Central Ohio. It costs the school nothing.</p>
-      <p>Every kit has two hands-on activities, all the materials, and step-by-step instructions written so a kid can follow them alone. One of our builds is a sail car: a wooden frame, wheels, and a sail that kids put together and race. $25 covers the materials for one kit.</p>
+<section class="band" aria-label="Photos">
+  <div class="frame slides" data-carousel>
+    <img class="active" src="images/kit-assembly-hero.jpg" alt="A Future Spark student sealing a kit at a kitchen table with a stack of finished kits">
+    <img src="images/box-of-kits-hero.jpg" alt="A cardboard box packed with sealed kits ready for delivery">
+  </div>
+  <span class="cut a"></span><span class="cut b"></span>
+  <div class="dots" role="tablist"><button type="button" aria-label="Show photo 1" aria-current="true"></button><button type="button" aria-label="Show photo 2" aria-current="false"></button></div>
+</section>
+
+<section class="grid feature">
+  <div class="text">
+    <h2 class="h-section stack">
+      <span><span class="tag black">Our kits are</span></span>
+      <span><span class="dot yellow"></span><span class="tag coral">built by hand</span></span>
+    </h2>
+    <div class="body p-large">
+      <p><strong>Future Spark</strong> started as a class project. Students were asked to find a gap for marginalized kids in the community and bridge it. Founder Satvik Surapaneni kept noticing the same thing: we ask kids what they want to be, but a lot of them decide they're "not an engineering person" without ever building a circuit or designing a bridge.</p>
+      <p>Nobody gets interested in engineering from a definition. You get interested by making something, breaking it, and figuring out why. So a few of us started designing kits, buying parts, and packing them on the living room floor. We deliver them ourselves, on evenings and weekends, funded so far by door-to-door fundraising and school events.</p>
     </div>
-    <div class="numbers">
-      <div><strong>300</strong><span>kits built and delivered, as of September 2026</span></div>
-      <div><strong>3</strong><span>elementary schools in Central Ohio</span></div>
-      <div><strong>3</strong><span>community organizations, including a family shelter network</span></div>
-      <div><strong>$0</strong><span>cost to students and schools</span></div>
-    </div>
+  </div>
+  <div class="media"><img src="images/build-night-wide.jpg" alt="Two Future Spark students sitting on a living room floor sealing kits into bags"></div>
+</section>
+
+<section class="grid cards">
+  <div class="head">
+    <h2 class="h-section stack">
+      <span><span class="tag teal">What's inside</span></span>
+      <span><span class="dot white"></span><span class="tag white">every kit</span></span>
+    </h2>
+  </div>
+  <div class="card-row">
+    <div class="card"><img src="images/sail-car-kit.jpg" alt="A sealed kit with a sail car instruction card"><h3 class="h-card">Two activities</h3><p>One of them is a sail car: a wooden frame, wheels, and a sail that kids put together and race.</p></div>
+    <div class="card"><img src="images/kit-contents.jpg" alt="Wooden parts, wheels, and a motor in a sealed bag"><h3 class="h-card">All the parts</h3><p>Every piece a kid needs is in the bag, labeled with its contents. Nothing to buy, no special tools.</p></div>
+    <div class="card"><img src="images/kit-assembly.jpg" alt="A student packing a kit at a kitchen table"><h3 class="h-card">Packed by hand</h3><p>Our students assemble, label, and seal every kit themselves.</p></div>
+    <div class="card"><img src="images/box-of-kits.jpg" alt="A cardboard box full of finished kits"><h3 class="h-card">Delivered free</h3><p>We bring the box to the school or organization in person. No cost, no paperwork.</p></div>
   </div>
 </section>
 
-<section class="band"><img src="images/kit-assembly-hero.jpg" alt="A Future Spark student sealing a kit at a kitchen table with a stack of finished kits beside him"></section>
-
-<section>
-  <div class="wrap split">
-    <div>
-      <h2>Our kits are <span class="pill yellow">built by hand</span></h2>
-      <p class="lead">Future Spark started as a class project. Students were asked to find a gap for marginalized kids in the community and bridge it.</p>
-      <p>Founder Satvik Surapaneni, a high school student in Columbus, kept noticing the same thing: we ask kids what they want to be, but a lot of them decide they're "not an engineering person" without ever building a circuit or designing a bridge. Nobody gets interested in engineering from a definition. You get interested by making something, breaking it, and figuring out why.</p>
-      <p>So a few students started designing kits, buying parts, and packing them on the living room floor. We deliver them ourselves, on evenings and weekends. Our funding so far has come from door-to-door fundraising and school events.</p>
-    </div>
-    <img class="tall" src="images/build-night-wide.jpg" alt="Two Future Spark students sitting on a living room floor sealing kits into bags">
-  </div>
+<section class="band" aria-label="Photo">
+  <div class="frame"><img src="images/box-of-kits-hero.jpg" alt="A box of sealed kits on the floor, ready to go"></div>
+  <span class="cut a"></span><span class="cut b"></span>
 </section>
 
-<section>
-  <div class="wrap">
-    <h2 class="strip-title"><span class="pill soft-blue">What's inside</span> the kit</h2>
-    <div class="strip">
-      <figure><img src="images/sail-car-kit.jpg" alt="A sealed kit bag with a sail car instruction card"><figcaption><strong>Two activities</strong><span>One of them is a sail car kids build and race</span></figcaption></figure>
-      <figure><img src="images/kit-contents.jpg" alt="Wooden parts, wheels, and a motor in a sealed bag"><figcaption><strong>All the parts</strong><span>Every piece a kid needs, nothing to buy</span></figcaption></figure>
-      <figure><img src="images/kit-assembly.jpg" alt="A student packing a kit at a kitchen table"><figcaption><strong>Packed by hand</strong><span>Sealed and labeled by our students</span></figcaption></figure>
-      <figure><img src="images/box-of-kits.jpg" alt="A cardboard box full of finished kits"><figcaption><strong>Delivered free</strong><span>We bring the box to the school ourselves</span></figcaption></figure>
-    </div>
-  </div>
-</section>
-
-<section class="band"><img src="images/box-of-kits-hero.jpg" alt="A box of sealed kits ready for delivery"></section>
-
-<section>
-  <div class="wrap split">
-    <div>
-      <h2>The next <span class="pill pink">700 kits</span></h2>
-      <p class="lead">We have built and delivered 300 kits. Our goal is 1,000 kits for ten or more elementary schools across Ohio.</p>
+<section class="grid feature">
+  <div class="text">
+    <h2 class="h-section stack">
+      <span><span class="dot coral"></span><span class="tag coral">300 kits</span></span>
+      <span><span class="tag black">delivered.</span></span>
+      <span><span class="tag white">1,000 to go.</span></span>
+    </h2>
+    <div class="body p-large">
+      <p><strong>Our next goal</strong> is 1,000 kits for ten or more elementary schools across Ohio. Buying materials in bulk lowers the cost of every kit and lets us reach schools beyond Columbus for the first time.</p>
       <div class="progress"><div style="width: 30%"></div></div>
       <div class="progress-labels"><span>300 delivered</span><span>1,000 goal</span></div>
-      <p style="margin-top: 24px">How it works: a school or organization tells us how many students it serves. We build the kits and deliver them in person. That's the whole process, and it costs the partner nothing.</p>
-    </div>
-    <div>
-      <h3>Who we work with</h3>
+      <p style="margin-top: 32px"><strong>Who we work with</strong></p>
       <ul class="partners">
         <li>Andrew's House <span>— community organization, Delaware, OH</span></li>
         <li>Family Promise of Delaware County <span>— family shelter network</span></li>
@@ -99,46 +108,47 @@
       </ul>
     </div>
   </div>
+  <div class="media outlined"><img src="images/sail-car-kit-wide.jpg" alt="A packed kit held in one hand, showing the sail car instruction card"></div>
 </section>
 
-<section class="involve">
-  <div class="dots"></div>
-  <div class="wrap">
-    <h2>Put the next kit on a <span class="pill blue">desk</span></h2>
-    <div class="shapes">
-      <div class="shape">
-        <h3>Schools</h3>
-        <p>Tell us how many students you serve. We bring the kits. No cost, no paperwork.</p>
-        <a class="btn btn-navy" href="get-involved.html#request">Request kits</a>
-      </div>
-      <div class="shape round">
-        <h3>Sponsors</h3>
-        <p>$25 makes one kit. $250 makes a classroom set.</p>
-        <a class="btn btn-blue" href="get-involved.html#sponsor">Sponsor a kit</a>
-      </div>
-      <div class="shape">
-        <h3>Volunteers</h3>
-        <p>Help us build, deliver, or write instructions. Students and adults welcome.</p>
-        <a class="btn btn-navy" href="get-involved.html#volunteer">Volunteer</a>
-      </div>
+<section class="grid bigcard">
+  <div class="title">
+    <h2 class="h-section stack">
+      <span><span class="tag yellow">Put a kit</span> on a</span>
+      <span>student's <span class="tag grey">desk</span></span>
+    </h2>
+  </div>
+  <div class="panel">
+    <h3 class="h-big">A school tells us how many students it serves. We build the kits and bring them. That's the whole process.</h3>
+    <div class="body">
+      <p>Schools, shelters, and community organizations in Central Ohio can request kits with one short form. Sponsors cover the materials: $25 makes one kit, $250 makes a classroom set. Volunteers help us build, deliver, and write instructions.</p>
+      <ul class="chips"><li>Elementary schools</li><li>Shelters</li><li>After-school programs</li><li>Sponsors</li><li>Volunteers</li><li>Funders</li></ul>
+      <a class="btn" href="get-involved.html">Get involved</a>
     </div>
   </div>
 </section>
+
+<section class="giant">
+  <div class="g-shapes" aria-hidden="true"><span class="p1"></span><span class="b1"></span><span class="p2"></span></div>
+  <h2 class="h-giant"><span>Get in</span><span class="l2">touch</span><span class="l3">with us</span></h2>
+  <a class="cta" href="mailto:futuresparks0@gmail.com">Email us</a>
+</section>
+</main>
 <footer>
-  <div class="wrap">
+  <div class="footbar">
     <div class="left">
       <a class="mark" href="index.html" aria-label="Future Spark home"><img src="images/mark.svg" alt=""></a>
       <span>Columbus, OH</span>
       <a href="mailto:futuresparks0@gmail.com">futuresparks0@gmail.com</a>
       <a href="https://www.instagram.com/ohs_future_engineers" target="_blank" rel="noopener">Instagram</a>
     </div>
-    <div>
-      <a href="for-funders.html">For funders</a> &nbsp;&middot;&nbsp;
-      <a href="contact.html">Contact</a> &nbsp;&middot;&nbsp;
-      <span>&copy; <span id="year">2026</span> Future Spark</span>
+    <div class="right">
+      <a href="for-funders.html">For funders</a>
+      <a href="contact.html">Contact</a>
+      <span>&copy; Future Spark <span id="year">2026</span></span>
     </div>
-    <p class="legal">Future Spark is a student-led initiative based in Columbus, Ohio, formerly Future Engineers. We are not yet a registered charitable organization. Sponsorships go directly toward kit materials.</p>
   </div>
+  <p class="legal">Future Spark is a student-led initiative based in Columbus, Ohio, formerly Future Engineers. We are not yet a registered charitable organization. Sponsorships go directly toward kit materials.</p>
 </footer>
 <script src="js/main.js"></script>
 </body>

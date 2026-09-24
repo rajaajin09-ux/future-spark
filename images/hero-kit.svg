@@ -2,19 +2,19 @@
   <defs><clipPath id="c"><rect width="640" height="640"/></clipPath></defs>
   <g clip-path="url(#c)">
     <!-- bag body -->
-    <rect x="120" y="230" width="500" height="420" rx="70" fill="#ffffff" stroke="#1c2b4a" stroke-width="14"/>
+    <rect x="120" y="230" width="500" height="420" rx="70" fill="#ffffff" stroke="#061a1e" stroke-width="14"/>
     <!-- zip seal -->
-    <rect x="96" y="300" width="548" height="44" rx="22" fill="#e5567a"/>
-    <rect x="96" y="300" width="548" height="44" rx="22" fill="none" stroke="#1c2b4a" stroke-width="10"/>
+    <rect x="96" y="300" width="548" height="44" rx="22" fill="#ef6156"/>
+    <rect x="96" y="300" width="548" height="44" rx="22" fill="none" stroke="#061a1e" stroke-width="10"/>
     <!-- slider -->
-    <rect x="392" y="284" width="72" height="76" rx="18" fill="#2b8ad6" stroke="#1c2b4a" stroke-width="10"/>
+    <rect x="392" y="284" width="72" height="76" rx="18" fill="#299093" stroke="#061a1e" stroke-width="10"/>
     <!-- sail car card inside the bag -->
-    <rect x="200" y="400" width="240" height="180" rx="20" fill="#cfe5f7" stroke="#1c2b4a" stroke-width="8"/>
-    <path d="M300 430 L300 520 L380 520 Z" fill="#f5c242" stroke="#1c2b4a" stroke-width="8" stroke-linejoin="round"/>
-    <rect x="236" y="520" width="170" height="28" rx="10" fill="#ffffff" stroke="#1c2b4a" stroke-width="8"/>
-    <circle cx="262" cy="556" r="16" fill="#1c2b4a"/><circle cx="380" cy="556" r="16" fill="#1c2b4a"/>
+    <rect x="200" y="400" width="240" height="180" rx="20" fill="#dbd7ca" stroke="#061a1e" stroke-width="8"/>
+    <path d="M300 430 L300 520 L380 520 Z" fill="#ffbd00" stroke="#061a1e" stroke-width="8" stroke-linejoin="round"/>
+    <rect x="236" y="520" width="170" height="28" rx="10" fill="#ffffff" stroke="#061a1e" stroke-width="8"/>
+    <circle cx="262" cy="556" r="16" fill="#061a1e"/><circle cx="380" cy="556" r="16" fill="#061a1e"/>
     <!-- spark leaving the corner -->
-    <path d="M540 60 C540 130 570 160 640 160 C570 160 540 190 540 260 C540 190 510 160 440 160 C510 160 540 130 540 60 Z" fill="#2b8ad6" stroke="#1c2b4a" stroke-width="12" stroke-linejoin="round"/>
-    <path d="M470 190 C470 215 480 225 505 225 C480 225 470 235 470 260 C470 235 460 225 435 225 C460 225 470 215 470 190 Z" fill="#f5c242"/>
+    <path d="M540 60 C540 130 570 160 640 160 C570 160 540 190 540 260 C540 190 510 160 440 160 C510 160 540 130 540 60 Z" fill="#299093" stroke="#061a1e" stroke-width="12" stroke-linejoin="round"/>
+    <path d="M470 190 C470 215 480 225 505 225 C480 225 470 235 470 260 C470 235 460 225 435 225 C460 225 470 215 470 190 Z" fill="#ffbd00"/>
   </g>
 </svg>

@@ -12,65 +12,61 @@
 <meta property="og:image" content="images/box-of-kits-wide.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700&family=Nunito:wght@900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 <header>
-  <div class="wrap">
-    <a class="mark" href="index.html" aria-label="Future Spark home"><img src="images/mark.svg" alt=""></a>
-    <div class="actions">
-      <a class="btn btn-navy" href="get-involved.html#request">Request kits</a>
-      <a class="btn btn-blue" href="get-involved.html#sponsor">Sponsor a kit</a>
-    </div>
+  <a class="mark" href="index.html" aria-label="Future Spark home"><img src="images/mark.svg" alt=""></a>
+  <div class="actions">
+    <a class="btn" href="get-involved.html#request">Request kits</a>
+    <a class="btn" href="get-involved.html#sponsor">Sponsor a kit</a>
   </div>
 </header>
+<main>
 
-<section class="page-title">
-  <div class="wrap">
-    <h1><span class="pill pink">Contact</span> us</h1>
-    <p>We're students, so we usually reply in the evenings and on weekends. Schools, sponsors, and reporters: say so in the subject line and we'll get back to you quickly.</p>
-  </div>
+<section class="grid page">
+  <h1 class="h-statement"><span class="tag coral">Contact</span> us</h1>
+  <p class="intro p-large">We're students, so we usually reply in the evenings and on weekends. Schools, sponsors, and reporters: say so in the subject line and we'll get back to you quickly.</p>
 </section>
 
-<section class="tight" style="padding-bottom: 110px">
-  <div class="wrap split" style="align-items: start">
-    <div>
-      <h3>Email</h3>
-      <p><a href="mailto:futuresparks0@gmail.com">futuresparks0@gmail.com</a></p>
-      <h3>Location</h3>
-      <p>Columbus, Ohio. We deliver across Central Ohio.</p>
-      <h3>Instagram</h3>
-      <p><a href="https://www.instagram.com/ohs_future_engineers" target="_blank" rel="noopener">@ohs_future_engineers</a></p>
-      <h3>Press</h3>
-      <p class="small">Future Spark is a student-led initiative in Columbus, Ohio, that designs, hand-assembles, and delivers free hands-on STEM kits to under-resourced elementary schools, shelters, and community organizations in Central Ohio. Started by high school student Satvik Surapaneni as a class service project, the team has delivered 300 kits to three elementary schools and three community organizations at no cost to students, and is working toward 1,000 kits across Ohio.</p>
-      <p class="small">Logos: <a href="images/logo.svg" download>color</a> &middot; <a href="images/logo-white.svg" download>white</a>. Photos on this site may be used with the credit "Photo: Future Spark."</p>
-    </div>
-    <form class="panel" id="contactForm" data-subject="Website message">
-      <div class="field"><label for="c-name">Name</label><input type="text" id="c-name" name="Name" required></div>
-      <div class="field"><label for="c-email">Email</label><input type="email" id="c-email" name="Email" required></div>
-      <div class="field"><label for="c-type">I am a</label><select id="c-type" name="I am a"><option>Teacher or school staff</option><option>Community organization</option><option>Sponsor or funder</option><option>Parent</option><option>Student</option><option>Reporter</option><option>Other</option></select></div>
-      <div class="field"><label for="c-message">Message</label><textarea id="c-message" name="Message" required></textarea></div>
-      <button class="btn btn-navy" type="submit">Send message</button>
-      <div class="msg" role="status"></div>
-    </form>
+<section class="grid block" style="padding-top: 0; padding-bottom: 112px">
+  <div class="text">
+    <h2 class="h-sub">Email</h2>
+    <p><a href="mailto:futuresparks0@gmail.com">futuresparks0@gmail.com</a></p>
+    <h2 class="h-sub" style="margin-top: 24px">Location</h2>
+    <p>Columbus, Ohio. We deliver across Central Ohio.</p>
+    <h2 class="h-sub" style="margin-top: 24px">Instagram</h2>
+    <p><a href="https://www.instagram.com/ohs_future_engineers" target="_blank" rel="noopener">@ohs_future_engineers</a></p>
+    <h2 class="h-sub" style="margin-top: 24px">Press</h2>
+    <p class="p-small">Future Spark is a student-led initiative in Columbus, Ohio, that designs, hand-assembles, and delivers free hands-on STEM kits to under-resourced elementary schools, shelters, and community organizations in Central Ohio. Started by high school student Satvik Surapaneni as a class service project, the team has delivered 300 kits to three elementary schools and three community organizations at no cost to students, and is working toward 1,000 kits across Ohio.</p>
+    <p class="p-small">Logos: <a href="images/logo.svg" download>color</a> &middot; <a href="images/logo-white.svg" download>white</a>. Photos on this site may be used with the credit "Photo: Future Spark."</p>
   </div>
+  <form class="panel" id="contactForm" data-subject="Website message">
+    <div class="field"><label for="c-name">Name</label><input type="text" id="c-name" name="Name" required></div>
+    <div class="field"><label for="c-email">Email</label><input type="email" id="c-email" name="Email" required></div>
+    <div class="field"><label for="c-type">I am a</label><select id="c-type" name="I am a"><option>Teacher or school staff</option><option>Community organization</option><option>Sponsor or funder</option><option>Parent</option><option>Student</option><option>Reporter</option><option>Other</option></select></div>
+    <div class="field"><label for="c-message">Message</label><textarea id="c-message" name="Message" required></textarea></div>
+    <button class="btn" type="submit">Send message</button>
+    <div class="msg" role="status"></div>
+  </form>
 </section>
+</main>
 <footer>
-  <div class="wrap">
+  <div class="footbar">
     <div class="left">
       <a class="mark" href="index.html" aria-label="Future Spark home"><img src="images/mark.svg" alt=""></a>
       <span>Columbus, OH</span>
       <a href="mailto:futuresparks0@gmail.com">futuresparks0@gmail.com</a>
       <a href="https://www.instagram.com/ohs_future_engineers" target="_blank" rel="noopener">Instagram</a>
     </div>
-    <div>
-      <a href="for-funders.html">For funders</a> &nbsp;&middot;&nbsp;
-      <a href="contact.html">Contact</a> &nbsp;&middot;&nbsp;
-      <span>&copy; <span id="year">2026</span> Future Spark</span>
+    <div class="right">
+      <a href="for-funders.html">For funders</a>
+      <a href="contact.html">Contact</a>
+      <span>&copy; Future Spark <span id="year">2026</span></span>
     </div>
-    <p class="legal">Future Spark is a student-led initiative based in Columbus, Ohio, formerly Future Engineers. We are not yet a registered charitable organization. Sponsorships go directly toward kit materials.</p>
   </div>
+  <p class="legal">Future Spark is a student-led initiative based in Columbus, Ohio, formerly Future Engineers. We are not yet a registered charitable organization. Sponsorships go directly toward kit materials.</p>
 </footer>
 <script src="js/main.js"></script>
 </body>

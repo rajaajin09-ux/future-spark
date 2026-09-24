@@ -1,6 +1,6 @@
 # Future Spark website
 
-Static site, no build step. Four pages share one stylesheet and one small script.
+Static site, no build step. Four pages share one stylesheet and one small script. The layout follows the structure of mindrobotics.com (mark plus two pill buttons, staggered wordmark hero with the three white shapes, tag-pill headlines, 2:1 photo bands, rounded image frames, pill-shaped footer bar), with Future Spark's own content, photos and colors; fonts are Outfit and Nunito from Google Fonts.
 
 - `index.html` — home
 - `get-involved.html` — request kits, sponsor a kit, volunteer
